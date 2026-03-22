@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow">
+  <title>0warn - Cyber Playground</title>
+  <link rel="stylesheet" href="../home.css">
+  <link rel="icon" sizes="70x70" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/OMSWASTRA_WITHOUT_BACKGORUND_2.png/250px-OMSWASTRA_WITHOUT_BACKGORUND_2.png" type="image/png">
+  <link rel="apple-touch-icon" sizes="70x70" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/OMSWASTRA_WITHOUT_BACKGORUND_2.png/250px-OMSWASTRA_WITHOUT_BACKGORUND_2.png"> 
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="./funthing.css">
+</head>
+<body class="funthing-body">
+  <canvas id="particleCanvas"></canvas> 
+  <div class="content">
+    <header>
+      <h1 class="logo-text"><a href="../"><span>ZERO</span><span>WARN</span></a></h1>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      <nav id="nav-menu">
+        <a href="../index.html" title="Home"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="../projects/projects.html" title="Projects"><i class="fas fa-code"></i><span>Projects</span></a>
+        <a href="../news/news.html" title="News"><i class="fas fa-newspaper"></i><span>News</span></a>
+        <a href="../pvideo/pvideo.html" title="Vlog"><i class="fas fa-video"></i><span>Vlog</span></a>
+        <a href="./funthing.html" title="Fun" class="active"><i class="fas fa-gamepad"></i><span>Fun</span></a>
+      </nav>
+      <a href="../clock/clock.html" title="Clock" class="nav-clock-btn">
+          <i class="fas fa-clock"></i>
+          <span id="clock">00:00:00</span>
+      </a>
+    </header>
+
+    <div class="main-funthing-container scroll-reveal">
+      <h2 class="section-title">FUN THING</h2>
+
+      <div class="lab-layout full-width-layout">
+        <!-- Top Row: Password Checker & HUD -->
+        <div class="lab-row">
+          <div class="fun-card glass-effect pass-panel">
+            <h3>
+              <span>🛡️ VULN_CHECKER</span>
+              <button onclick="copyToClipboard('pwd-input', this)" class="icon-btn" title="Copy Password"><i class="fas fa-copy"></i></button>
+            </h3>
+            <div class="pass-input-group">
+              <input type="password" id="pwd-input" placeholder="Test password strength...">
+              <button onclick="togglePasswordVisibility()" class="icon-btn" id="pass-toggle"><i class="fas fa-eye"></i></button>
+            </div>
+            <div id="pwd-strength-bar"></div>
+            <p id="pwd-feedback" class="result-text">Strength: --</p>
+            <div class="pass-info" id="pass-details">Enter a password to analyze.</div>
+            <button onclick="generatePass()" style="margin-top: 15px; width: 100%;">GENERATE_SECURE</button>
+          </div>
+          
+          <div class="fun-card glass-effect status-panel">
+            <h3>📡 SYSTEM_HUD</h3>
+            <div class="hud-stats-grid">
+              <div class="stat-box"><span>RESOLUTION</span> <b id="scr-w">--</b></div>
+              <div class="stat-box"><span>LATENCY</span> <b id="ping">--</b></div>
+              <div class="stat-box"><span>UPTIME</span> <b id="uptime">0s</b></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Middle Row: Cipher & JSON -->
+        <div class="lab-row">
+          <div class="fun-card glass-effect crypto-panel">
+            <h3>
+              <span>🔐 CIPHER_TOOLS</span>
+              <button onclick="copyToClipboard('crypto-input', this)" class="icon-btn" title="Copy Output"><i class="fas fa-copy"></i></button>
+            </h3>
+            <textarea id="crypto-input" placeholder="Enter text to encode/decode..."></textarea>
+            <div class="cipher-btns">
+              <button onclick="cipher('b64-enc')">B64_ENC</button>
+              <button onclick="cipher('b64-dec')">B64_DEC</button>
+              <button onclick="cipher('uri-enc')">URL_ENC</button>
+              <button onclick="cipher('uri-dec')">URL_DEC</button>
+              <button onclick="cipher('rev')">REVERSE</button>
+            </div>
+          </div>
+
+          <div class="fun-card glass-effect json-panel">
+            <h3>
+              <span>📦 JSON_FORMATTER</span>
+              <button onclick="copyToClipboard('json-input', this)" class="icon-btn" title="Copy JSON"><i class="fas fa-copy"></i></button>
+            </h3>
+            <textarea id="json-input" placeholder="Paste JSON here..."></textarea>
+            <div class="json-btns">
+              <button onclick="formatJSON('pretty')">BEAUTIFY</button>
+              <button onclick="formatJSON('minify')">MINIFY</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom: Terminal (Full Width) -->
+        <div class="fun-card glass-effect terminal-panel full-width-card">
+          <h3>💻 INTERACTIVE_SHELL</h3>
+          <div class="cyber-console" id="terminal-body" onclick="document.getElementById('console-input').focus()">
+            <div class="console-output" id="console-output">
+              <p>> root@0warn:~# System online. Type 'help' for commands.</p>
+            </div>
+            <form id="terminal-form" class="input-line" onsubmit="return handleTerminalSubmit(event)">
+              <span>root@0warn:~$</span>
+              <input type="text" id="console-input" autocomplete="off" autofocus>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <footer>
+      &copy; 2026 0warn | SECURING THE FUTURE
+    </footer>
+  </div>
+  
+  <script src="../script.js"></script>
+  <script src="./funthing.js"></script>
+</body>
+</html>

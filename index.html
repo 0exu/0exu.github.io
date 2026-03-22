@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>0warn | Cyber Security & Dev</title>
+  <link rel="stylesheet" href="./home.css" />
+  <link rel="icon" sizes="70x70" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/OMSWASTRA_WITHOUT_BACKGORUND_2.png/250px-OMSWASTRA_WITHOUT_BACKGORUND_2.png" type="image/png">
+  <link rel="apple-touch-icon" sizes="70x70" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/OMSWASTRA_WITHOUT_BACKGORUND_2.png/250px-OMSWASTRA_WITHOUT_BACKGORUND_2.png"> 
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body>
+  <!-- System Overlay/Loader -->
+  <div id="system-overlay">
+    <div class="loader-text">Initializing System...</div>
+    <div class="loader-bar"></div>
+  </div>
+
+  <canvas id="particleCanvas"></canvas>
+
+  <div class="content">
+    <header>
+      <h1 class="logo-text">
+        <a href="./"><span>ZERO</span><span>WARN</span></a>
+      </h1>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      <nav id="nav-menu">
+        <a href="./index.html" title="Home" class="active"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="./projects/projects.html"><i class="fas fa-code"></i><span>Projects</span></a>
+        <a href="./news/news.html"><i class="fas fa-newspaper"></i><span>News</span></a>
+        <a href="./pvideo/pvideo.html"><i class="fas fa-video"></i><span>Vlog</span></a>
+        <a href="./funthing/funthing.html"><i class="fas fa-gamepad"></i><span>Fun</span></a>
+      </nav>
+      <a href="./clock/clock.html" title="Clock" class="nav-clock-btn">
+          <i class="fas fa-clock"></i>
+          <span id="clock">00:00:00</span>
+      </a>
+    </header>
+
+    <!-- Mobile Hero -->
+    <div class="mobile-hero-section">
+      <div class="hero-logo-container">
+        <div class="logo-glitch"></div>
+      </div>
+    </div>
+
+    <main class="bento-grid">
+      <!-- Grid Hero (Glitch) -->
+      <div class="item-large scroll-reveal heroic-grid-item">
+        <div class="hero-logo-container">
+          <div class="logo-glitch"></div>
+        </div>
+      </div>
+
+      <!-- IP Info Card -->
+      <div class="bento-item scroll-reveal">
+        <i class="fas fa-network-wired" style="font-size: 1.5rem; color: var(--primary-glow); margin-bottom: 10px;"></i>
+        <h3 style="font-size: 0.7rem; color: #888; letter-spacing: 2px;">ACCESS_IP</h3>
+        <p id="ip" class="stat-value" style="color: var(--secondary-glow);">FETCHING...</p>
+      </div>
+
+      <!-- System Status Card -->
+      <div class="bento-item scroll-reveal">
+        <i class="fas fa-shield-alt" style="font-size: 1.5rem; color: #0f0; margin-bottom: 10px;"></i>
+        <h3 style="font-size: 0.7rem; color: #888; letter-spacing: 2px;">OS_STATUS</h3>
+        <p class="stat-value" style="color: #0f0;">ENCRYPTED</p>
+      </div>
+
+      <!-- Project Quick Link -->
+      <a href="./projects/projects.html" class="bento-item item-wide scroll-reveal nav-card">
+        <i class="fas fa-project-diagram"></i>
+        <span>PROJECTS</span>
+      </a>
+
+      <!-- Terminal Log Box -->
+      <div class="bento-item scroll-reveal">
+        <h3 style="font-size: 0.8rem; color: #888; margin-bottom: 15px; width: 100%; text-align: left;">S-INIT_LOG</h3>
+        <div class="terminal-text" id="terminal-log">
+            <p class="typing-text">> root@0warn:~# _</p>
+        </div>
+      </div>
+
+      <!-- Cyber News Quick Feed -->
+      <div class="bento-item scroll-reveal">
+        <h3 style="font-size: 0.8rem; color: #888; margin-bottom: 10px; width: 100%; text-align: left;">CYBER_NEWS</h3>
+        <div id="cyber-news-feed" class="news-feed">
+            <p style="font-size: 0.75rem; color: #555;">Connecting to feed...</p>
+        </div>
+      </div>
+
+      <!-- Video Quick Link -->
+      <a href="./pvideo/pvideo.html" class="bento-item scroll-reveal nav-card">
+        <i class="fas fa-video"></i>
+        <span>VLOGS</span>
+      </a>
+
+      <!-- Clock/Time Stats -->
+      <div class="bento-item scroll-reveal">
+        <i class="fas fa-microchip" style="font-size: 1.5rem; color: #ff0; margin-bottom: 10px;"></i>
+        <h3 style="font-size: 0.7rem; color: #888; letter-spacing: 2px;">CPU_CYCLE</h3>
+        <p class="stat-value" style="color: #ff0;">STABLE</p>
+      </div>
+
+      <!-- Fun Quick Link -->
+      <a href="./funthing/funthing.html" class="bento-item item-wide scroll-reveal nav-card">
+        <i class="fas fa-gamepad"></i>
+        <span>ARENA</span>
+      </a>
+    </main>
+
+    <footer>
+      &copy; 2026 0warn | SECURING THE FUTURE
+    </footer>
+  </div>
+
+  <script src="./script.js"></script>
+  <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="omswastra" data-description="Support me on Buy me a coffee!" data-message="Welcome, to home page. Can i get one cup of coffee..." data-color="#FF5F5F" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+</body>
+</html>

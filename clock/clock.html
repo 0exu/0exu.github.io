@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>0warn - Chronos Engine</title>
+  <link rel="stylesheet" href="../home.css">
+  <link rel="icon" sizes="70x70" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/OMSWASTRA_WITHOUT_BACKGORUND_2.png/250px-OMSWASTRA_WITHOUT_BACKGORUND_2.png" type="image/png">
+  <link rel="apple-touch-icon" sizes="70x70" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/OMSWASTRA_WITHOUT_BACKGORUND_2.png/250px-OMSWASTRA_WITHOUT_BACKGORUND_2.png"> 
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="./clock.css">
+</head>
+<body class="clock-body">
+  <canvas id="particleCanvas"></canvas>
+  <div class="content">
+    <header>
+      <h1 class="logo-text"><a href="../"><span>ZERO</span><span>WARN</span></a></h1>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      <nav id="nav-menu">
+        <a href="../index.html" title="Home"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="../projects/projects.html" title="Projects"><i class="fas fa-code"></i><span>Projects</span></a>
+        <a href="../news/news.html" title="News"><i class="fas fa-newspaper"></i><span>News</span></a>
+        <a href="../pvideo/pvideo.html" title="Vlog"><i class="fas fa-video"></i><span>Vlog</span></a>
+        <a href="../funthing/funthing.html" title="Fun"><i class="fas fa-gamepad"></i><span>Fun</span></a>
+      </nav>
+      <a href="./clock.html" title="Clock" class="nav-clock-btn active">
+          <i class="fas fa-clock"></i>
+          <span id="clock">00:00:00</span>
+      </a>
+    </header>
+
+    <div class="chronos-viewport">
+      <aside class="pinned-vault left-side glass-effect">
+        <div id="pinned-grid-left" class="vault-grid"></div>
+      </aside>
+
+      <main class="chronos-center">
+        <div class="digital-chronos-wrapper">
+          <div class="digital-chronos-glow"></div>
+          <div class="digital-chronos-box glass-effect">
+            <h2 id="display-time">00:00:00</h2>
+            <p id="display-date">Saturday, March 21, 2026</p>
+          </div>
+        </div>
+      </main>
+
+      <aside class="pinned-vault right-side glass-effect">
+        <div id="pinned-grid-right" class="vault-grid"></div>
+      </aside>
+    </div>
+
+    <div class="search-terminal-container">
+      <div class="search-engine-selector">
+        <button class="engine-pill" onclick="setEngine('google', this)"><i class="fab fa-google"></i></button>
+        <button class="engine-pill active" onclick="setEngine('duckduckgo', this)"><i class="fas fa-shield-alt"></i></button>
+        <button class="engine-pill" onclick="setEngine('github', this)"><i class="fab fa-github"></i></button>
+        <button class="engine-pill" onclick="setEngine('gitlab', this)"><i class="fab fa-gitlab"></i></button>
+        <button class="engine-pill" onclick="setEngine('yahoo', this)"><i class="fab fa-yahoo"></i></button>
+        <button class="engine-pill" onclick="setEngine('bing', this)"><i class="fab fa-microsoft"></i></button>
+      </div>
+      <div class="animated-border-wrap">
+        <form class="search-form-core" onsubmit="return handleSearch(event)">
+          <input type="text" id="search-input" placeholder="> [CTRL + E] Search Secure..." autocomplete="off">
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+
+    <div id="pin-modal" class="modal-overlay">
+      <div class="modal-window glass-effect">
+        <h3>NEW_PIN</h3>
+        <input type="text" id="pin-title" placeholder="Title">
+        <input type="text" id="pin-url" placeholder="https://...">
+        <div class="modal-actions">
+          <button onclick="closePinModal()" class="btn-void">VOID</button>
+          <button onclick="savePin()" class="btn-confirm">SAVE</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER REMOVED FROM CLOCK PAGE -->
+  </div>
+  
+  <script src="../script.js"></script>
+  <script src="./clock.js"></script>
+</body>
+</html>

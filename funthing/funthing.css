@@ -1,0 +1,261 @@
+/* CYBER_LAB_v3 - PREMIUM DARK LIQUID GLASS (1800px) */
+
+:root {
+    --primary-glow: #00f7ff;
+    --secondary-glow: #ff00ff;
+    --terminal-green: #00ff88;
+    --glass-bg: linear-gradient(135deg, rgba(20, 20, 35, 0.9) 0%, rgba(10, 10, 20, 0.8) 100%);
+    --glass-border: rgba(255, 255, 255, 0.12);
+}
+
+.content {
+    max-width: 1800px !important;
+}
+
+.main-funthing-container {
+    max-width: 1800px;
+    margin: 100px auto 60px;
+    padding: 0 40px;
+    position: relative;
+    z-index: 10;
+}
+
+/* --- ENHANCED GLASS CARDS --- */
+.fun-card {
+    position: relative;
+    overflow: hidden;
+    will-change: transform, opacity; /* Performance optimization */
+    
+    /* Firefox Fixes */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform, backdrop-filter;
+}
+
+.fun-card h3 {
+    color: var(--primary-glow);
+    font-size: 1rem;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 15px;
+}
+
+.fun-card > * { position: relative; z-index: 2; }
+
+/* --- GRID LAYOUT --- */
+.lab-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.lab-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.full-width-card {
+    grid-column: span 2;
+}
+
+/* --- PREMIUM FORM ELEMENTS --- */
+textarea, input[type="text"], input[type="password"] {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 16px !important;
+    padding: 20px !important;
+    color: #fff !important;
+    font-family: 'Roboto Mono', monospace !important;
+    font-size: 1rem !important;
+    outline: none !important;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+textarea:focus, input:focus {
+    border-color: var(--primary-glow) !important;
+    background: rgba(0, 0, 0, 0.7) !important;
+    box-shadow: 0 0 20px rgba(0, 247, 255, 0.2), inset 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+.pass-input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.pass-input-group .icon-btn {
+    position: absolute;
+    right: 20px;
+    color: var(--primary-glow);
+    opacity: 0.6;
+}
+
+/* --- NEON BUTTONS --- */
+button {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 16px 28px;
+    border-radius: 14px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    white-space: nowrap;
+}
+
+button:hover {
+    background: var(--primary-glow);
+    color: #000;
+    box-shadow: 0 0 30px var(--primary-glow);
+    transform: scale(1.02);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.icon-btn {
+    background: none !important;
+    border: none !important;
+    padding: 10px !important;
+    font-size: 1.2rem !important;
+    color: #888;
+    box-shadow: none !important;
+}
+
+.icon-btn:hover {
+    color: var(--primary-glow) !important;
+    background: none !important;
+    transform: rotate(5deg) scale(1.2) !important;
+}
+
+/* --- HUD GRID --- */
+.hud-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.stat-box {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.stat-box:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--secondary-glow);
+}
+
+.stat-box span {
+    font-size: 0.75rem;
+    color: #666;
+    display: block;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.stat-box b {
+    font-size: 1.4rem;
+    color: var(--secondary-glow);
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+}
+
+/* --- PASSWORD STRENGTH --- */
+#pwd-strength-bar {
+    height: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    margin: 25px 0 15px;
+    overflow: hidden;
+}
+
+#pwd-strength-bar::after {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 0;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#pwd-strength-bar.weak::after { width: 33%; background: #ff4444; box-shadow: 0 0 15px #ff4444; }
+#pwd-strength-bar.medium::after { width: 66%; background: #ffbb00; box-shadow: 0 0 15px #ffbb00; }
+#pwd-strength-bar.strong::after { width: 100%; background: var(--terminal-green); box-shadow: 0 0 15px var(--terminal-green); }
+
+.pass-info { font-size: 0.85rem; color: #888; margin-top: 15px; min-height: 1.2em; }
+
+/* --- CIPHER & JSON --- */
+#crypto-input, #json-input { height: 320px; resize: none; line-height: 1.6; }
+.cipher-btns, .json-btns { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 25px; }
+
+/* --- TERMINAL --- */
+.cyber-console {
+    background: #000;
+    border-radius: 24px;
+    padding: 35px;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    box-shadow: inset 0 0 40px rgba(0, 255, 136, 0.05);
+}
+
+.console-output {
+    flex: 1;
+    overflow-y: auto;
+    font-size: 1.05rem;
+    color: var(--terminal-green);
+    scrollbar-width: thin;
+    scrollbar-color: var(--terminal-green) transparent;
+}
+
+.console-output::-webkit-scrollbar { width: 5px; }
+.console-output::-webkit-scrollbar-thumb { background: var(--terminal-green); border-radius: 10px; }
+
+.input-line {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-top: 1px solid rgba(0, 255, 136, 0.1);
+    padding-top: 25px;
+    margin-top: 10px;
+}
+
+.input-line span {
+    color: var(--primary-glow);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+#console-input {
+    flex: 1;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    color: #fff !important;
+    font-size: 1.05rem !important;
+    box-shadow: none !important;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1200px) {
+    .lab-row { grid-template-columns: 1fr; }
+    .full-width-card { grid-column: span 1; }
+    .hud-stats-grid { grid-template-columns: 1fr; }
+}

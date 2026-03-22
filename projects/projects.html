@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow">
+  <title>0warn - Power Vault</title>
+  <link rel="stylesheet" href="../home.css">
+  <link rel="icon" sizes="70x70" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/OMSWASTRA_WITHOUT_BACKGORUND_2.png/250px-OMSWASTRA_WITHOUT_BACKGORUND_2.png" type="image/png">
+  <link rel="apple-touch-icon" sizes="70x70" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/OMSWASTRA_WITHOUT_BACKGORUND_2.png/250px-OMSWASTRA_WITHOUT_BACKGORUND_2.png"> 
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="./projects.css">
+</head>
+<body class="projects-body">
+  <canvas id="particleCanvas"></canvas> 
+  <div class="content">
+    <header>
+      <h1 class="logo-text"><a href="../"><span>ZERO</span><span>WARN</span></a></h1>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      <nav id="nav-menu">
+        <a href="../index.html" title="Home"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="./projects.html" title="Projects" class="active"><i class="fas fa-code"></i><span>Projects</span></a>
+        <a href="../news/news.html" title="News"><i class="fas fa-newspaper"></i><span>News</span></a>
+        <a href="../pvideo/pvideo.html" title="Vlog"><i class="fas fa-video"></i><span>Vlog</span></a>
+        <a href="../funthing/funthing.html" title="Fun"><i class="fas fa-gamepad"></i><span>Fun</span></a>
+      </nav>
+      <a href="../clock/clock.html" title="Clock" class="nav-clock-btn">
+          <i class="fas fa-clock"></i>
+          <span id="clock">00:00:00</span>
+      </a>
+    </header>
+
+    <div class="power-container">
+      <!-- CONTROL CENTER -->
+      <div class="terminal-controls glass-effect">
+        <div class="search-wrap">
+          <i class="fas fa-terminal"></i>
+          <input type="text" id="project-search" placeholder="Search resources... ( Press '/' to focus )" autocomplete="off">
+        </div>
+        <div class="filter-tabs" id="filter-tabs">
+          <button class="filter-pill active" data-filter="all">ALL_FILES</button>
+          <button class="filter-pill" data-filter="python">PYTHON</button>
+          <button class="filter-pill" data-filter="bash">BASH</button>
+          <button class="filter-pill" data-filter="security">SECURITY</button>
+          <button class="filter-pill" data-filter="golang">GOLANG</button>
+        </div>
+        <div class="vault-meta">
+          <span>NODES: <b id="node-count">0</b></span>
+          <span>ARMORY: <b>STABLE</b></span>
+        </div>
+      </div>
+
+      <!-- DATA GRID -->
+      <div class="power-grid" id="tools-grid"></div>
+    </div>
+    
+    <footer>
+      &copy; 2026 0warn | [ CTRL + C ] TO EXIT
+    </footer>
+  </div>
+  
+  <script src="../script.js"></script>
+  <script src="./projects.js"></script>
+</body>
+</html>

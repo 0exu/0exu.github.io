@@ -1,0 +1,96 @@
+/* Power Vault - Static Glass Design */
+
+.power-container {
+    max-width: 1800px;
+    margin: 40px auto;
+    padding: 0 40px;
+}
+
+/* --- CONTROL CENTER --- */
+.terminal-controls {
+    background: rgba(10, 10, 18, 0.6);
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 25px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.search-wrap {
+    flex: 1;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.search-wrap input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+.filter-pill {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #888;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.7rem;
+    font-weight: 900;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-pill.active { background: var(--primary-glow); color: #000; border-color: var(--primary-glow); }
+
+/* --- THE DATA GRID --- */
+.power-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    padding-bottom: 60px;
+}
+
+/* THE STATIC GLASS CARD */
+.tool-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+    /* Browser Stability */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; }
+.tool-card img { width: 50px; height: 50px; filter: drop-shadow(0 0 10px rgba(0, 247, 255, 0.2)); }
+.category-tag { font-size: 0.6rem; font-weight: 900; background: rgba(255, 255, 255, 0.05); padding: 4px 10px; border-radius: 4px; color: var(--primary-glow); letter-spacing: 1px; }
+.card-body h3 { font-size: 1.2rem; color: #fff; margin-bottom: 10px; font-weight: 800; }
+.card-desc { font-size: 0.85rem; color: #aaa; line-height: 1.6; height: 3.2em; overflow: hidden; }
+.card-actions { display: flex; gap: 15px; margin-top: 5px; }
+.action-btn { flex: 1; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: #fff; padding: 10px; border-radius: 8px; font-size: 0.7rem; font-weight: 900; cursor: pointer; transition: 0.2s; text-decoration: none; text-align: center; }
+.action-btn:hover { background: #fff; color: #000; }
+.btn-clone { border-color: var(--secondary-glow); color: var(--secondary-glow); }
+.btn-clone:hover { background: var(--secondary-glow); color: #fff; }
+
+@media (max-width: 1600px) { .power-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 1200px) { .power-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) {
+    .power-grid { grid-template-columns: 1fr; }
+    .terminal-controls { flex-direction: column; gap: 20px; padding: 25px; }
+    .search-wrap { max-width: 100%; }
+}
