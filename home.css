@@ -564,7 +564,13 @@ nav a:active {
 
 @media (max-width: 1000px) {
     header h1.logo-text { display: none; }
-    header { padding: 0 15px; justify-content: flex-end; gap: 10px; }
+    header { 
+        width: auto;
+        min-width: auto;
+        padding: 0 15px; 
+        justify-content: center; 
+        gap: 10px; 
+    }
     
     .nav-clock-btn { margin-left: 0; order: 1; }
     .theme-toggle-btn { margin-left: 0; order: 2; }
