@@ -563,14 +563,17 @@ nav a:active {
 }
 
 @media (max-width: 1000px) {
+    header h1.logo-text { display: none; }
+    header { padding: 0 15px; justify-content: flex-end; gap: 10px; }
+    
+    .nav-clock-btn { margin-left: 0; order: 1; }
+    .theme-toggle-btn { margin-left: 0; order: 2; }
+    .menu-toggle { display: block; order: 3; margin-left: 5px; }
+
     .hero-split { flex-direction: column; }
     .hero-visual-panel { height: 300px; flex: auto; }
     .bento-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
     .content { padding: 100px 20px 0 20px; }
-    
-    .menu-toggle {
-        display: block;
-    }
     
     nav {
         display: none;
