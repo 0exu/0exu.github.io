@@ -25,10 +25,10 @@
   .youtube-sidebar { 
     width: 100% !important; 
     position: sticky !important; 
-    top: 80px !important;
+    top: 100px !important; /* Adjusted for compact header */
     left: 0 !important;
     margin: 10px 0 !important;
-    max-height: 350px !important;
+    max-height: 400px !important;
     flex: none !important;
     z-index: 500 !important;
     border-radius: 20px !important;
@@ -82,14 +82,157 @@
   box-shadow: var(--shadow-hover);
 }
 
-.sidebar-title { color: var(--primary-glow); font-size: 1rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.8rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 900; }
-.youtube-sidebar .folder-label { display: flex; align-items: center; padding: 12px 18px; cursor: pointer; color: var(--text-main); border-radius: 14px; transition: all 0.3s ease; background: var(--surface-inset); margin-bottom: 8px; box-shadow: var(--shadow-base); }
-.youtube-sidebar .folder-label:hover { transform: translateY(-2px); color: var(--primary-glow); }
-.youtube-sidebar li.folder.expanded > .folder-label { color: var(--accent-glow); box-shadow: var(--shadow-pressed); transform: translateY(1px); }
+#sidebar-video-list, 
+#sidebar-video-list ul, 
+#sidebar-video-list li,
+.youtube-sidebar ul,
+.youtube-sidebar li {
+    list-style: none !important;
+    list-style-type: none !important;
+    list-style-image: none !important;
+    margin: 0;
+    padding: 0;
+    padding-inline-start: 0 !important;
+}
 
-.youtube-sidebar .file { display: flex; align-items: center; padding: 10px 15px; border-radius: 10px; transition: all 0.2s ease; color: var(--text-muted); font-size: 0.85rem; position: relative; background: var(--surface-raised); margin: 5px 0; box-shadow: var(--shadow-raised); }
-.youtube-sidebar .file:hover { transform: translateX(5px) translateY(-2px); color: var(--text-main); box-shadow: var(--shadow-hover); }
-.youtube-sidebar .file:active { transform: translateX(2px) translateY(1px); box-shadow: var(--shadow-pressed); }
+#sidebar-video-list ul.nested {
+    display: none;
+    margin-left: 25px;
+    position: relative;
+}
+
+#sidebar-video-list ul.nested.expanded {
+    display: block;
+}
+
+/* Vertical line for nested items */
+#sidebar-video-list ul.nested li::before {
+    content: "";
+    position: absolute;
+    left: -15px;
+    top: -10px; /* Start from above to connect */
+    width: 1px;
+    height: calc(100% + 10px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Stop vertical line for the last item */
+#sidebar-video-list ul.nested li:last-child::before {
+    height: 30px; /* Adjust to stop at the horizontal line level */
+}
+
+/* Horizontal line for each item */
+.youtube-sidebar li::after {
+    content: "";
+    position: absolute;
+    left: -15px;
+    top: 20px;
+    width: 15px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Folders don't need the horizontal line on the top level */
+#sidebar-video-list > li::after {
+    display: none;
+}
+
+.youtube-sidebar li {
+    position: relative;
+    padding: 5px 0;
+}
+
+.sidebar-title { 
+    color: var(--primary-glow); 
+    font-size: 1rem; 
+    margin-bottom: 1.5rem; 
+    border-bottom: 1px solid var(--glass-border); 
+    padding-bottom: 0.8rem; 
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+    font-weight: 900; 
+}
+
+.youtube-sidebar .folder-label { 
+    display: flex; 
+    align-items: center; 
+    padding: 10px 15px; 
+    cursor: pointer; 
+    color: var(--text-main); 
+    border-radius: 12px; 
+    transition: all 0.3s ease; 
+    background: rgba(14, 113, 185, 0.1); 
+    margin-bottom: 8px; 
+    border: 1px solid rgba(14, 113, 185, 0.4);
+    font-weight: bold;
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 2;
+}
+
+.youtube-sidebar .folder-label::before {
+    content: "\f07b"; /* fa-folder */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #ffca28;
+    margin-right: 12px;
+    font-size: 1.1rem;
+}
+
+.youtube-sidebar li.folder.expanded > .folder-label::before {
+    content: "\f07c"; /* fa-folder-open */
+}
+
+.youtube-sidebar .folder-label:hover { 
+    background: rgba(14, 113, 185, 0.2); 
+    border-color: #0e71b9;
+}
+
+.youtube-sidebar li.folder.expanded > .folder-label { 
+    background: rgba(14, 113, 185, 0.25); 
+    color: #fff;
+    border-color: #0e71b9;
+    box-shadow: 0 0 15px rgba(14, 113, 185, 0.3);
+}
+
+.youtube-sidebar .file { 
+    display: flex; 
+    align-items: center; 
+    padding: 10px 12px; 
+    border-radius: 8px; 
+    transition: all 0.2s ease; 
+    color: var(--text-muted); 
+    font-size: 0.85rem; 
+    background: transparent;
+    margin: 4px 0;
+}
+
+.youtube-sidebar .file a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.youtube-sidebar .file a::before {
+    content: "\f8d0"; /* fa-video (solid style variant or clapperboard) */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #64748b;
+    margin-right: 12px;
+    font-size: 1rem;
+}
+
+.youtube-sidebar .file:hover { 
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-main); 
+    transform: translateX(5px);
+}
+
+.youtube-sidebar .file:hover a::before {
+    color: var(--primary-glow);
+}
 
 .youtube-video-wrapper h3 { color: var(--text-main); font-size: 1.5rem; margin: 30px 25px 15px; line-height: 1.4; font-weight: 900; letter-spacing: 0.5px; }
 
