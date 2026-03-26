@@ -1,27 +1,27 @@
 // Power Vault - Professional Power-User Logic
 const tools = [
-  { name: 'LINUX-DEFENDER', img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/BASH_LOGO_WITHOUT_BACKGROUND.png/250px-BASH_LOGO_WITHOUT_BACKGROUND.png', desc: 'Advanced system hardening and security auditing script for Linux environments.', category: 'bash' },
-  { name: 'Hare-Krishna', img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/BASH_LOGO_WITHOUT_BACKGROUND.png/250px-BASH_LOGO_WITHOUT_BACKGROUND.png', desc: 'Secure automation engine for devops workflows and repetitive task management.', category: 'bash' },
-  { name: 'SUDARSHAN', img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/BASH_LOGO_WITHOUT_BACKGROUND.png/250px-BASH_LOGO_WITHOUT_BACKGROUND.png', desc: 'Real-time threat monitoring and network traffic analysis tool.', category: 'security' },
+  { name: 'LINUX-DEFENDER', img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/BASH_LOGO_WITHOUT_BACKGROUND.png/250px-BASH_LOGO_WITHOUT_BACKGROUND.png', desc: 'Advanced system hardening and security auditing script for Linux environments.', category: 'bash', gitlab: true },
+  { name: 'Hare-Krishna', img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/BASH_LOGO_WITHOUT_BACKGROUND.png/250px-BASH_LOGO_WITHOUT_BACKGROUND.png', desc: 'Secure automation engine for devops workflows and repetitive task management.', category: 'bash', gitlab: true },
+  { name: 'SUDARSHAN', img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/BASH_LOGO_WITHOUT_BACKGROUND.png/250px-BASH_LOGO_WITHOUT_BACKGROUND.png', desc: 'Real-time threat monitoring and network traffic analysis tool.', category: 'security', gitlab: true },
   { name: 'Mahakal-Framework', img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/BASH_LOGO_WITHOUT_BACKGROUND.png/250px-BASH_LOGO_WITHOUT_BACKGROUND.png', desc: 'Comprehensive penetration testing framework for various attack vectors.', category: 'security' },
-  { name: 'STEG-Detector', img: 'https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg', desc: 'Steganography analysis tool to detect hidden data in images and files.', category: 'python' },
+  { name: 'STEG-Detector', img: 'https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg', desc: 'Steganography analysis tool to detect hidden data in images and files.', category: 'python', gitlab: true },
   { name: 'ONE-Type', img: 'https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg', desc: 'A minimalist, high-speed typing performance and accuracy analyzer.', category: 'python' },
-  { name: 'HASH-Cracker', img: 'https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg', desc: 'Multi-threaded cryptographic hash identification and recovery tool.', category: 'security' },
+  { name: 'HASH-Cracker', img: 'https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg', desc: 'Multi-threaded cryptographic hash identification and recovery tool.', category: 'security', gitlab: true },
   { name: 'KEYLOGGER-Detector', img: 'https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg', desc: 'Heuristic-based scanner to identify unauthorized input interception.', category: 'security' },
-  { name: 'WEB-Scanner', img: 'https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg', desc: 'Vulnerability scanner for web applications identifying OWASP Top 10.', category: 'python' },
-  { name: 'PORT-Scanner', img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/C_LANGUAGE_WITHOUT_BACKGROUND.png/250px-C_LANGUAGE_WITHOUT_BACKGROUND.png', desc: 'Ultra-fast low-level network port discovery and service identifier.', category: 'security' },
+  { name: 'WEB-Scanner', img: 'https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg', desc: 'Vulnerability scanner for web applications identifying OWASP Top 10.', category: 'python', gitlab: true },
+  { name: 'PORT-Scanner', img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/C_LANGUAGE_WITHOUT_BACKGROUND.png/250px-C_LANGUAGE_WITHOUT_BACKGROUND.png', desc: 'Ultra-fast low-level network port discovery and service identifier.', category: 'security', gitlab: true },
   { name: 'genotp', img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/C_LANGUAGE_WITHOUT_BACKGROUND.png/250px-C_LANGUAGE_WITHOUT_BACKGROUND.png', desc: 'Cryptographically secure one-time password generation utility.', category: 'security' },
   { name: 'DIR-Fuzz', img: 'https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg', desc: 'High-speed web directory and file discovery tool using dictionary attacks.', category: 'python' },
-  { name: 'SEC-File', img: 'https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg', desc: 'Secure file encryption utility using military-grade AES algorithms.', category: 'security' },
+  { name: 'SEC-File', img: 'https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg', desc: 'Secure file encryption utility using military-grade AES algorithms.', category: 'security', gitlab: true },
   { name: 'PSSWD-Checker', img: 'https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg', desc: 'Advanced password entropy analyzer and strength validator.', category: 'security' },
   { name: 'NUM-Info', img: 'https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg', desc: 'OSINT tool for gathering detailed information from mobile numbers.', category: 'python' },
-  { name: 'AUTOMATED-nmap', img: 'https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg', desc: 'Automated network mapping and vulnerability scanning orchestrator.', category: 'security' },
+  { name: 'AUTOMATED-nmap', img: 'https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg', desc: 'Automated network mapping and vulnerability scanning orchestrator.', category: 'security', gitlab: true },
   { name: 'MAL-Analyzer', img: 'https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg', desc: 'Static and dynamic analysis engine for suspicious binary files.', category: 'security' },
   { name: 'WEB-CRAWLER', img: 'https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg', desc: 'Scalable web spider for automated data extraction and site mapping.', category: 'python' },
   { name: 'WEB-Dorker', img: 'https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg', desc: 'Advanced search engine scraping tool using custom dork patterns.', category: 'security' },
   { name: '0scam', img: 'https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg', desc: 'Social engineering awareness and simulation tool for security researchers.', category: 'security' },
   { name: '0scam-browse', img: '../back/js-logo.png', desc: 'A web-based interface for repository management and browsing.', category: 'python' },
-  { name: 'OPEN-Eye', img: 'https://static.vecteezy.com/system/resources/previews/012/697/296/original/3d-golang-programming-language-logo-free-png.png', desc: 'Fast, concurrent asset discovery tool for large attack surfaces.', category: 'golang' },
+  { name: 'OPEN-Eye', img: 'https://static.vecteezy.com/system/resources/previews/012/697/296/original/3d-golang-programming-language-logo-free-png.png', desc: 'Fast, concurrent asset discovery tool for large attack surfaces.', category: 'golang', gitlab: true },
   { name: 'VEDHARA', img: 'https://static.vecteezy.com/system/resources/previews/012/697/296/original/3d-golang-programming-language-logo-free-png.png', desc: 'Next-gen distributed penetration testing orchestration engine.', category: 'golang' },
   { name: 'procut', img: 'https://static.vecteezy.com/system/resources/previews/012/697/296/original/3d-golang-programming-language-logo-free-png.png', desc: 'High-performance string and data processing utility in Go.', category: 'golang' },
   { name: '.vim', img: '../back/vim.png', desc: 'Optimized Vim configuration for lightning-fast development workflows.', category: 'bash' },
@@ -42,7 +42,12 @@ document.addEventListener('DOMContentLoaded', function() {
     function renderTools() {
         grid.innerHTML = '';
         const filtered = tools.filter(t => {
-            const matchesFilter = currentFilter === 'all' || t.category === currentFilter;
+            let matchesFilter = currentFilter === 'all' || t.category === currentFilter;
+            
+            // GitLab/GitHub Specific Filtering
+            if (currentFilter === 'gitlab') matchesFilter = t.gitlab;
+            if (currentFilter === 'legacy') matchesFilter = !t.gitlab;
+
             const matchesSearch = t.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
                                 t.desc.toLowerCase().includes(searchQuery.toLowerCase());
             return matchesFilter && matchesSearch;
@@ -53,6 +58,23 @@ document.addEventListener('DOMContentLoaded', function() {
         filtered.forEach(t => {
             const card = document.createElement('div');
             card.className = 'tool-card scroll-reveal show';
+            
+            const gitlabUrl = `https://gitlab.com/0warn/${t.name}`;
+            const githubUrl = `https://github.com/0warn/${t.name}`;
+            
+            let actionButtons = '';
+            if (t.gitlab) {
+                actionButtons = `
+                    <a href="${gitlabUrl}" class="action-btn gitlab-btn" target="_blank"><i class="fab fa-gitlab"></i> GITLAB</a>
+                    <div class="migration-hint">Primary Repository</div>
+                `;
+            } else {
+                actionButtons = `
+                    <a href="${githubUrl}" class="action-btn github-legacy-btn" target="_blank"><i class="fab fa-github"></i> LEGACY (GITHUB)</a>
+                    <div class="migration-hint">Migrating to GitLab...</div>
+                `;
+            }
+
             card.innerHTML = `
                 <div class="card-header">
                     <img src="${t.img}" alt="${t.name}">
@@ -63,8 +85,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p class="card-desc">${t.desc}</p>
                 </div>
                 <div class="card-actions">
-                    <a href="https://github.com/0warn/${t.name}" class="action-btn" target="_blank">RESOURCES</a>
-                    <button onclick="copyClone('${t.name}', this)" class="action-btn btn-clone">CLONE</button>
+                    ${actionButtons}
+                    <button onclick="copyClone('${t.name}', this, ${t.gitlab})" class="action-btn btn-clone">CLONE</button>
                 </div>
             `;
             grid.appendChild(card);
@@ -77,8 +99,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 card.style.setProperty('--x', `${x}%`);
                 card.style.setProperty('--y', `${y}%`);
                 
-                const rotateX = (y - 50) / 10;
-                const rotateY = (x - 50) / -10;
+                const rotateX = (y - 50) / 15;
+                const rotateY = (x - 50) / -15;
                 card.style.transform = `translateY(-10px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
             });
 
@@ -115,16 +137,17 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // GLOBAL UTILS
-window.copyClone = function(repoName, btn) {
-    const cmd = `git clone https://github.com/0warn/${repoName}.git`;
+window.copyClone = function(repoName, btn, isGitLab) {
+    const baseUrl = isGitLab ? 'gitlab.com/0warn' : 'github.com/0warn';
+    const cmd = `git clone https://${baseUrl}/${repoName}.git`;
     navigator.clipboard.writeText(cmd).then(() => {
-        const originalText = btn.innerText;
+        const originalText = btn.innerHTML;
         btn.innerText = 'COPIED!';
-        btn.style.borderColor = '#0f0';
-        btn.style.color = '#0f0';
+        btn.style.boxShadow = 'var(--shadow-pressed)';
+        btn.style.color = 'var(--accent-glow)';
         setTimeout(() => {
-            btn.innerText = originalText;
-            btn.style.borderColor = '';
+            btn.innerHTML = originalText;
+            btn.style.boxShadow = '';
             btn.style.color = '';
         }, 2000);
     });

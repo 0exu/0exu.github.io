@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="./home.css" />
   <link rel="icon" sizes="70x70" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/OMSWASTRA_WITHOUT_BACKGORUND_2.png/250px-OMSWASTRA_WITHOUT_BACKGORUND_2.png" type="image/png">
   <link rel="apple-touch-icon" sizes="70x70" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/OMSWASTRA_WITHOUT_BACKGORUND_2.png/250px-OMSWASTRA_WITHOUT_BACKGORUND_2.png"> 
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Roboto+Mono:wght@400;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
 <body>
@@ -17,6 +17,7 @@
     <div class="loader-bar"></div>
   </div>
 
+  <div class="bg-parallax-layer" id="bg-parallax"></div>
   <canvas id="particleCanvas"></canvas>
 
   <div class="content">
@@ -36,77 +37,87 @@
           <i class="fas fa-clock"></i>
           <span id="clock">00:00:00</span>
       </a>
+      <button class="theme-toggle-btn" id="theme-toggle" title="Toggle Theme">
+          <i class="fas fa-moon"></i>
+      </button>
     </header>
 
-    <!-- Mobile Hero -->
-    <div class="mobile-hero-section">
-      <div class="hero-logo-container">
-        <div class="logo-glitch"></div>
-      </div>
-    </div>
-
     <main class="bento-grid">
-      <!-- Grid Hero (Glitch) -->
-      <div class="item-large scroll-reveal heroic-grid-item">
-        <div class="hero-logo-container">
-          <div class="logo-glitch"></div>
+      <!-- Hero Split Section -->
+      <div class="hero-split scroll-reveal">
+        <div class="hero-text-panel">
+          <h2>Securing Code,<br/>Engineering Systems.</h2>
+          <p>Senior Cyber Security Researcher and DevOps Engineer. Specializing in automated threat detection, secure infrastructure, and high-performance architectures driven by a GitLab-first ecosystem.</p>
+          <div class="hero-actions">
+            <a href="./projects/projects.html" class="primary-btn"><i class="fab fa-gitlab"></i> View Operations</a>
+          </div>
+        </div>
+        <div class="hero-visual-panel">
+          <div class="hero-logo-container">
+            <div class="logo-glitch"></div>
+          </div>
         </div>
       </div>
 
-      <!-- IP Info Card -->
-      <div class="bento-item scroll-reveal">
-        <i class="fas fa-network-wired" style="font-size: 1.5rem; color: var(--primary-glow); margin-bottom: 10px;"></i>
-        <h3 style="font-size: 0.7rem; color: #888; letter-spacing: 2px;">ACCESS_IP</h3>
-        <p id="ip" class="stat-value" style="color: var(--secondary-glow);">FETCHING...</p>
+      <!-- Stats / Highlights Section -->
+      <div class="bento-item scroll-reveal" style="text-align: center;">
+        <h3 class="section-title">PROJECTS_DEPLOYED</h3>
+        <p class="stat-value" style="color: var(--primary-glow); font-size: 2.5rem;">28+</p>
+      </div>
+
+      <div class="bento-item scroll-reveal" style="text-align: center;">
+        <h3 class="section-title">CORE_EXPERTISE</h3>
+        <p class="stat-value" style="color: var(--secondary-glow); font-size: 1.5rem;">DevSecOps</p>
       </div>
 
       <!-- System Status Card -->
-      <div class="bento-item scroll-reveal">
-        <i class="fas fa-shield-alt" style="font-size: 1.5rem; color: #0f0; margin-bottom: 10px;"></i>
-        <h3 style="font-size: 0.7rem; color: #888; letter-spacing: 2px;">OS_STATUS</h3>
-        <p class="stat-value" style="color: #0f0;">ENCRYPTED</p>
+      <div class="bento-item scroll-reveal" style="text-align: center;">
+        <i class="fas fa-shield-alt" style="font-size: 2rem; color: var(--accent-glow); margin-bottom: 10px;"></i>
+        <h3 class="section-title">OS_STATUS</h3>
+        <p class="stat-value" style="color: var(--accent-glow);">ENCRYPTED</p>
       </div>
 
-      <!-- Project Quick Link -->
-      <a href="./projects/projects.html" class="bento-item item-wide scroll-reveal nav-card">
-        <i class="fas fa-project-diagram"></i>
-        <span>PROJECTS</span>
-      </a>
+      <div class="bento-item scroll-reveal" style="text-align: center;">
+        <h3 class="section-title">ACCESS_IP</h3>
+        <p id="ip" class="stat-value" style="color: var(--text-main); font-size: 1.2rem;">FETCHING...</p>
+      </div>
+
+      <!-- About Section -->
+      <div class="bento-item item-wide scroll-reveal about-panel">
+        <h3 class="section-title">SYSTEM_PROFILE</h3>
+        <p>I architect secure automation pipelines and conduct deep security audits. My workflow heavily integrates GitLab CI/CD, Go, and Python to build resilient backends and comprehensive testing frameworks. Currently migrating legacy systems into unified, high-assurance environments.</p>
+      </div>
+
+      <!-- Workflow / Tools Section -->
+      <div class="bento-item item-wide scroll-reveal skills-panel">
+        <h3 class="section-title">WORKFLOW_&_TOOLS</h3>
+        <div class="skills-grid">
+          <span class="skill-tile"><i class="fab fa-gitlab"></i> GitLab CI</span>
+          <span class="skill-tile"><i class="fab fa-docker"></i> Docker</span>
+          <span class="skill-tile"><i class="fab fa-linux"></i> Linux / Bash</span>
+          <span class="skill-tile"><i class="fas fa-shield-virus"></i> PenTest</span>
+          <span class="skill-tile"><i class="fab fa-python"></i> Python</span>
+          <span class="skill-tile"><i class="fas fa-server"></i> Go</span>
+        </div>
+      </div>
 
       <!-- Terminal Log Box -->
-      <div class="bento-item scroll-reveal">
-        <h3 style="font-size: 0.8rem; color: #888; margin-bottom: 15px; width: 100%; text-align: left;">S-INIT_LOG</h3>
+      <div class="bento-item item-wide scroll-reveal">
+        <h3 class="section-title">S-INIT_LOG</h3>
         <div class="terminal-text" id="terminal-log">
             <p class="typing-text">> root@0warn:~# _</p>
         </div>
       </div>
 
-      <!-- Cyber News Quick Feed -->
-      <div class="bento-item scroll-reveal">
-        <h3 style="font-size: 0.8rem; color: #888; margin-bottom: 10px; width: 100%; text-align: left;">CYBER_NEWS</h3>
-        <div id="cyber-news-feed" class="news-feed">
-            <p style="font-size: 0.75rem; color: #555;">Connecting to feed...</p>
-        </div>
+      <!-- Contact Section -->
+      <div class="bento-item item-wide scroll-reveal contact-panel">
+        <h3 class="section-title">SECURE_COMMS</h3>
+        <form class="contact-form">
+          <input type="email" placeholder="ENCRYPTED_EMAIL" required>
+          <textarea placeholder="SECURE_MESSAGE" rows="3" required></textarea>
+          <button type="submit" class="action-btn">TRANSMIT</button>
+        </form>
       </div>
-
-      <!-- Video Quick Link -->
-      <a href="./pvideo/pvideo.html" class="bento-item scroll-reveal nav-card">
-        <i class="fas fa-video"></i>
-        <span>VLOGS</span>
-      </a>
-
-      <!-- Clock/Time Stats -->
-      <div class="bento-item scroll-reveal">
-        <i class="fas fa-microchip" style="font-size: 1.5rem; color: #ff0; margin-bottom: 10px;"></i>
-        <h3 style="font-size: 0.7rem; color: #888; letter-spacing: 2px;">CPU_CYCLE</h3>
-        <p class="stat-value" style="color: #ff0;">STABLE</p>
-      </div>
-
-      <!-- Fun Quick Link -->
-      <a href="./funthing/funthing.html" class="bento-item item-wide scroll-reveal nav-card">
-        <i class="fas fa-gamepad"></i>
-        <span>ARENA</span>
-      </a>
     </main>
 
     <footer>

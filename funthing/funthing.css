@@ -1,19 +1,11 @@
 /* CYBER_LAB_v3 - PREMIUM DARK LIQUID GLASS (1800px) */
 
-:root {
-    --primary-glow: #00f7ff;
-    --secondary-glow: #ff00ff;
-    --terminal-green: #00ff88;
-    --glass-bg: linear-gradient(135deg, rgba(20, 20, 35, 0.9) 0%, rgba(10, 10, 20, 0.8) 100%);
-    --glass-border: rgba(255, 255, 255, 0.12);
-}
-
 .content {
-    max-width: 1800px !important;
+    max-width: 1400px !important;
 }
 
 .main-funthing-container {
-    max-width: 1800px;
+    max-width: 1400px;
     margin: 100px auto 60px;
     padding: 0 40px;
     position: relative;
@@ -24,25 +16,31 @@
 .fun-card {
     position: relative;
     overflow: hidden;
-    will-change: transform, opacity; /* Performance optimization */
-    
-    /* Firefox Fixes */
+    background: var(--surface-raised);
+    border: 1px solid var(--glass-border);
+    border-radius: 28px;
+    padding: 35px;
+    box-shadow: var(--shadow-raised);
+    transition: all 0.3s ease;
     transform: translateZ(0);
-    backface-visibility: hidden;
-    will-change: transform, backdrop-filter;
+}
+
+.fun-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
 }
 
 .fun-card h3 {
     color: var(--primary-glow);
-    font-size: 1rem;
+    font-size: 1.1rem;
     letter-spacing: 3px;
     margin-bottom: 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-transform: uppercase;
-    font-weight: 700;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-weight: 900;
+    border-bottom: 1px solid var(--glass-border);
     padding-bottom: 15px;
 }
 
@@ -68,22 +66,20 @@
 /* --- PREMIUM FORM ELEMENTS --- */
 textarea, input[type="text"], input[type="password"] {
     width: 100%;
-    background: rgba(0, 0, 0, 0.5) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background: var(--surface-inset) !important;
+    border: 1px solid transparent !important;
     border-radius: 16px !important;
     padding: 20px !important;
-    color: #fff !important;
+    color: var(--text-main) !important;
     font-family: 'Roboto Mono', monospace !important;
     font-size: 1rem !important;
     outline: none !important;
     transition: all 0.3s ease;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow-base) !important;
 }
 
 textarea:focus, input:focus {
     border-color: var(--primary-glow) !important;
-    background: rgba(0, 0, 0, 0.7) !important;
-    box-shadow: 0 0 20px rgba(0, 247, 255, 0.2), inset 0 2px 4px rgba(0, 0, 0, 0.5) !important;
 }
 
 .pass-input-group {
@@ -102,29 +98,30 @@ textarea:focus, input:focus {
 
 /* --- NEON BUTTONS --- */
 button {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #fff;
-    padding: 16px 28px;
+    background: var(--surface-raised);
+    border: 1px solid transparent;
+    color: var(--text-main);
+    padding: 16px 30px;
     border-radius: 14px;
     cursor: pointer;
-    font-weight: 700;
+    font-weight: 900;
     font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: var(--shadow-raised);
     white-space: nowrap;
 }
 
 button:hover {
-    background: var(--primary-glow);
-    color: #000;
-    box-shadow: 0 0 30px var(--primary-glow);
-    transform: scale(1.02);
+    color: var(--primary-glow);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
 }
 
 button:active {
-    transform: scale(0.98);
+    transform: translateY(2px);
+    box-shadow: var(--shadow-pressed);
 }
 
 .icon-btn {
@@ -132,7 +129,7 @@ button:active {
     border: none !important;
     padding: 10px !important;
     font-size: 1.2rem !important;
-    color: #888;
+    color: var(--text-muted);
     box-shadow: none !important;
 }
 
@@ -150,40 +147,40 @@ button:active {
 }
 
 .stat-box {
-    background: rgba(255, 255, 255, 0.02);
+    background: var(--surface-inset);
     padding: 25px;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
     text-align: center;
     transition: 0.3s;
+    box-shadow: var(--shadow-base);
 }
 
 .stat-box:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: var(--secondary-glow);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
 }
 
 .stat-box span {
     font-size: 0.75rem;
-    color: #666;
+    color: var(--text-muted);
     display: block;
     margin-bottom: 10px;
     letter-spacing: 2px;
 }
 
 .stat-box b {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     color: var(--secondary-glow);
-    text-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
 }
 
 /* --- PASSWORD STRENGTH --- */
 #pwd-strength-bar {
-    height: 10px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 5px;
+    height: 12px;
+    background: var(--surface-inset);
+    border-radius: 6px;
     margin: 25px 0 15px;
     overflow: hidden;
+    box-shadow: var(--shadow-base);
 }
 
 #pwd-strength-bar::after {
@@ -196,9 +193,9 @@ button:active {
 
 #pwd-strength-bar.weak::after { width: 33%; background: #ff4444; box-shadow: 0 0 15px #ff4444; }
 #pwd-strength-bar.medium::after { width: 66%; background: #ffbb00; box-shadow: 0 0 15px #ffbb00; }
-#pwd-strength-bar.strong::after { width: 100%; background: var(--terminal-green); box-shadow: 0 0 15px var(--terminal-green); }
+#pwd-strength-bar.strong::after { width: 100%; background: var(--accent-glow); box-shadow: 0 0 15px var(--accent-glow); }
 
-.pass-info { font-size: 0.85rem; color: #888; margin-top: 15px; min-height: 1.2em; }
+.pass-info { font-size: 0.85rem; color: var(--text-muted); margin-top: 15px; min-height: 1.2em; }
 
 /* --- CIPHER & JSON --- */
 #crypto-input, #json-input { height: 320px; resize: none; line-height: 1.6; }
@@ -206,33 +203,32 @@ button:active {
 
 /* --- TERMINAL --- */
 .cyber-console {
-    background: #000;
-    border-radius: 24px;
+    background: var(--surface-inset);
+    border-radius: 28px;
     padding: 35px;
     height: 650px;
     display: flex;
     flex-direction: column;
-    border: 1px solid rgba(0, 255, 136, 0.2);
-    box-shadow: inset 0 0 40px rgba(0, 255, 136, 0.05);
+    box-shadow: var(--shadow-base);
 }
 
 .console-output {
     flex: 1;
     overflow-y: auto;
     font-size: 1.05rem;
-    color: var(--terminal-green);
+    color: var(--accent-glow);
     scrollbar-width: thin;
-    scrollbar-color: var(--terminal-green) transparent;
+    scrollbar-color: var(--accent-glow) transparent;
 }
 
 .console-output::-webkit-scrollbar { width: 5px; }
-.console-output::-webkit-scrollbar-thumb { background: var(--terminal-green); border-radius: 10px; }
+.console-output::-webkit-scrollbar-thumb { background: var(--accent-glow); border-radius: 10px; }
 
 .input-line {
     display: flex;
     align-items: center;
     gap: 15px;
-    border-top: 1px solid rgba(0, 255, 136, 0.1);
+    border-top: 1px solid var(--glass-border);
     padding-top: 25px;
     margin-top: 10px;
 }
@@ -248,7 +244,7 @@ button:active {
     background: transparent !important;
     border: none !important;
     padding: 0 !important;
-    color: #fff !important;
+    color: var(--text-main) !important;
     font-size: 1.05rem !important;
     box-shadow: none !important;
 }
