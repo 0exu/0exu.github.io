@@ -109,7 +109,7 @@ const tools = [
     name: "0scam-browse",
     img: "../back/js-logo.png",
     desc: "A web-based interface for repository management and browsing.",
-    category: "python",
+    category: "security",
     gitlab: true,
   },
   {
