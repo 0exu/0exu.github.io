@@ -3,12 +3,12 @@
     "type": "folder",
     "name": "File Upload Vulnerability",
     "children": [
-      {"type": "file", "id": "uvP6VR5Ocak", "title": "01 - File Upload vulnerability"},
-      {"type": "file", "id": "mj2RK0DGVFE", "title": "02 - File Upload + restriction bypass"},
-      {"type": "file", "id": "YBvLsVS8xac", "title": "03 - File Upload + path trivarsal"},
-      {"type": "file", "id": "x2fT2sSphYI", "title": "04 - File upload + extension changing method"},
-      {"type": "file", "id": "XrDpNCngWAY", "title": "05 - File upload + apache config manipulation"},
-      {"type": "file", "id": "Zn7Z9RQrZ6c", "title": "06 - File Upload + exiftool photo payload"}
+      {"type": "file", "id": "uvP6VR5Ocak", "title": "01 - File Upload Vulnerability"},
+      {"type": "file", "id": "mj2RK0DGVFE", "title": "02 - Restriction Bypass"},
+      {"type": "file", "id": "YBvLsVS8xac", "title": "03 - Path Tevarsal"},
+      {"type": "file", "id": "x2fT2sSphYI", "title": "04 - Extension Changing"},
+      {"type": "file", "id": "XrDpNCngWAY", "title": "05 - Apache Config Manipulation"},
+      {"type": "file", "id": "Zn7Z9RQrZ6c", "title": "06 - Exiftool Photo Payload"}
     ]
   },
   {

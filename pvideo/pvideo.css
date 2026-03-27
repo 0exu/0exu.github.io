@@ -65,7 +65,7 @@
   box-shadow: var(--shadow-raised);
   position: relative;
   margin-bottom: 3rem; 
-  margin-top: 80px;
+  margin-top: 10px;
 }
 
 .youtube-video-wrapper iframe { 
@@ -97,39 +97,26 @@
 
 #sidebar-video-list ul.nested {
     display: none;
-    margin-left: 30px;
+    margin-left: 18px;
+    padding-left: 15px;
     position: relative;
+    border-left: 1px solid rgba(14, 113, 185, 0.3);
+    margin-top: 5px;
 }
 
 #sidebar-video-list ul.nested.expanded {
     display: block;
 }
 
-/* Vertical line for nested items */
-#sidebar-video-list ul.nested li::before {
-    content: "";
-    position: absolute;
-    left: -18px;
-    top: -10px;
-    width: 1px;
-    height: calc(100% + 10px);
-    background: rgba(14, 113, 185, 0.2);
-}
-
-/* Stop vertical line for the last item */
-#sidebar-video-list ul.nested li:last-child::before {
-    height: 30px;
-}
-
 /* Horizontal line for each item */
-.youtube-sidebar li::after {
+.youtube-sidebar ul.nested li::after {
     content: "";
     position: absolute;
-    left: -18px;
+    left: -15px;
     top: 20px;
     width: 12px;
     height: 1px;
-    background: rgba(14, 113, 185, 0.2);
+    background: rgba(14, 113, 185, 0.3);
 }
 
 /* Folders don't need the horizontal line on the top level */
@@ -156,6 +143,13 @@
 #youtube-main-content {
     flex: 1;
     min-width: 0;
+    padding-left: 30px;
+}
+
+.youtube-videos-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .youtube-sidebar .folder-label { 
@@ -241,6 +235,51 @@
 
 .youtube-video-wrapper h3 { color: var(--text-main); font-size: 1.5rem; margin: 30px 25px 15px; line-height: 1.4; font-weight: 900; letter-spacing: 0.5px; }
 
-.youtube-pagination-controls button { width: 60px; height: 60px; border-radius: 50%; background: var(--surface-raised); border: 1px solid var(--glass-border); color: var(--text-main); cursor: pointer; transition: all 0.3s ease; box-shadow: var(--shadow-raised); display: flex; align-items: center; justify-content: center; }
-.youtube-pagination-controls button:hover { color: var(--primary-glow); transform: translateY(-3px); box-shadow: var(--shadow-hover); }
-.youtube-pagination-controls button:active { transform: translateY(2px); box-shadow: var(--shadow-pressed); }
+.youtube-pagination-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin: 3rem 0;
+    width: 100%;
+}
+
+.youtube-pagination-controls button { 
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
+    background: var(--surface-raised); 
+    border: 1px solid var(--glass-border); 
+    color: var(--text-main); 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+    box-shadow: var(--shadow-raised); 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 1.2rem;
+}
+
+#video-page-info {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.youtube-pagination-controls button:hover:not(:disabled) { 
+    color: var(--primary-glow); 
+    transform: translateY(-3px); 
+    box-shadow: var(--shadow-hover); 
+}
+
+.youtube-pagination-controls button:active:not(:disabled) { 
+    transform: translateY(2px); 
+    box-shadow: var(--shadow-pressed); 
+}
+
+.youtube-pagination-controls button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    box-shadow: none;
+}
