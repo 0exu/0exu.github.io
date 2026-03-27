@@ -1,8 +1,8 @@
 /* Practical Videos Page Styles */
 .pvideo-body .content {
-    max-width: 100% !important;
+    max-width: 1400px !important;
     margin: 0 auto;
-    padding: 0 !important;
+    padding: 0 20px !important;
     padding-top: 140px !important;
     overflow: visible !important;
     display: flex;
@@ -13,11 +13,10 @@
 .youtube-layout {
   display: flex;
   gap: 2rem;
-  padding: 20px;
+  padding: 20px 0;
   padding-top: 20px;
   width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
+  margin: 0;
   align-items: flex-start;
   overflow: visible !important;
   flex: 1; /* Push footer down */
@@ -287,11 +286,4 @@
     opacity: 0.3;
     cursor: not-allowed;
     box-shadow: none;
-}
-
-/* Fix footer height and centering */
-footer {
-    padding: 30px 0 !important; /* Reduced from 60px in home.css */
-    width: 100%;
-    margin-top: auto;
 }
