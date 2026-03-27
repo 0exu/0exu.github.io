@@ -1,19 +1,26 @@
 /* Practical Videos Page Styles */
 .pvideo-body .content {
-    max-width: 1400px !important;
-    margin: 60px auto;
+    max-width: 100% !important;
+    margin: 0 auto;
+    padding: 0 !important;
     padding-top: 140px !important;
+    overflow: visible !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .youtube-layout {
   display: flex;
   gap: 2rem;
-  padding: 20px 0;
+  padding: 20px;
   padding-top: 20px;
   width: 100%;
-  max-width: 100%;
-  margin: 0;
+  max-width: 1400px;
+  margin: 0 auto;
   align-items: flex-start;
+  overflow: visible !important;
+  flex: 1; /* Push footer down */
 }
 
 @media (max-width: 1200px) {
@@ -49,10 +56,20 @@
   border-radius: 28px;
   padding: 1.5rem;
   position: sticky;
-  top: 120px;
+  top: 110px; /* Offset from top of viewport */
   max-height: calc(100vh - 150px);
   overflow-y: auto;
   box-shadow: var(--shadow-raised);
+  z-index: 100;
+}
+
+.youtube-sidebar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.youtube-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(14, 113, 185, 0.2);
+    border-radius: 10px;
 }
 
 .youtube-video-wrapper {
@@ -100,23 +117,11 @@
     margin-left: 18px;
     padding-left: 15px;
     position: relative;
-    border-left: 1px solid rgba(14, 113, 185, 0.3);
     margin-top: 5px;
 }
 
 #sidebar-video-list ul.nested.expanded {
     display: block;
-}
-
-/* Horizontal line for each item */
-.youtube-sidebar ul.nested li::after {
-    content: "";
-    position: absolute;
-    left: -15px;
-    top: 20px;
-    width: 12px;
-    height: 1px;
-    background: rgba(14, 113, 185, 0.3);
 }
 
 /* Folders don't need the horizontal line on the top level */
@@ -282,4 +287,11 @@
     opacity: 0.3;
     cursor: not-allowed;
     box-shadow: none;
+}
+
+/* Fix footer height and centering */
+footer {
+    padding: 30px 0 !important; /* Reduced from 60px in home.css */
+    width: 100%;
+    margin-top: auto;
 }
