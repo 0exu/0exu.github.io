@@ -100,6 +100,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
       prevButton.disabled = (page === 0);
       nextButton.disabled = (end >= newsItems.length);
+      updatePaginationInfo();
+    }
+
+    function updatePaginationInfo() {
+        const pageInfo = document.getElementById('news-page-info');
+        if (pageInfo) {
+            const totalPages = Math.ceil(newsItems.length / ITEMS_PER_PAGE);
+            pageInfo.textContent = `Page ${currentPage + 1} of ${totalPages || 1}`;
+        }
     }
 
     function openModal(item) {
