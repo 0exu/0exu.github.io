@@ -179,13 +179,23 @@
     font-size: 1.1rem;
 }
 
+/* Added chevron for better foldable indication */
+.youtube-sidebar .folder-label::after {
+    content: "\f054"; /* fa-chevron-right */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-left: auto;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    transition: transform 0.3s ease;
+}
+
 .youtube-sidebar li.folder.expanded > .folder-label::before {
     content: "\f07c"; /* fa-folder-open */
 }
 
-.youtube-sidebar .folder-label:hover { 
-    background: rgba(14, 113, 185, 0.2); 
-    border-color: #0e71b9;
+.youtube-sidebar li.folder.expanded > .folder-label::after {
+    transform: rotate(90deg);
 }
 
 .youtube-sidebar li.folder.expanded > .folder-label { 
@@ -216,22 +226,12 @@
 }
 
 .youtube-sidebar .file a::before {
-    content: "\f8d0"; /* fa-video (solid style variant or clapperboard) */
+    content: "\f03d"; /* fa-video (fixed unicode from \f8d0) */
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     color: #64748b;
     margin-right: 12px;
     font-size: 1rem;
-}
-
-.youtube-sidebar .file:hover { 
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--text-main); 
-    transform: translateX(5px);
-}
-
-.youtube-sidebar .file:hover a::before {
-    color: var(--primary-glow);
 }
 
 .youtube-video-wrapper h3 { color: var(--text-main); font-size: 1.5rem; margin: 30px 25px 15px; line-height: 1.4; font-weight: 900; letter-spacing: 0.5px; }
