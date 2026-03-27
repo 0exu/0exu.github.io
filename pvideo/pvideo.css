@@ -1,4 +1,8 @@
 /* Practical Videos Page Styles */
+.pvideo-body, .pvideo-body html {
+    overflow: visible !important;
+}
+
 .pvideo-body .content {
     max-width: 1400px !important;
     margin: 0 auto;
@@ -25,18 +29,18 @@
 @media (max-width: 1200px) {
   .youtube-layout { 
     display: block !important; 
-    padding: 0 !important;
+    padding: 0 20px !important;
   }
   
   .youtube-sidebar { 
     width: 100% !important; 
     position: sticky !important; 
-    top: 100px !important; /* Adjusted for compact header */
+    top: 90px !important; /* Just below the header */
     left: 0 !important;
     margin: 10px 0 !important;
-    max-height: 400px !important;
+    max-height: 300px !important;
     flex: none !important;
-    z-index: 500 !important;
+    z-index: 1 !important; /* Lower z-index so videos go over it */
     border-radius: 20px !important;
   }
 
@@ -45,6 +49,10 @@
     padding: 10px 0 !important;
     box-sizing: border-box !important;
     display: block !important;
+    position: relative !important;
+    z-index: 10 !important; /* Higher z-index to cover sidebar */
+    background: var(--bg-color) !important; /* Opaque background to hide sidebar underneath */
+    padding-top: 20px !important;
   }
 }
 
@@ -56,10 +64,10 @@
   padding: 1.5rem;
   position: sticky;
   top: 110px; /* Offset from top of viewport */
-  max-height: calc(100vh - 150px);
+  max-height: calc(100vh - 130px);
   overflow-y: auto;
   box-shadow: var(--shadow-raised);
-  z-index: 100;
+  z-index: 1000; /* High z-index for large screen visibility */
 }
 
 .youtube-sidebar::-webkit-scrollbar {
