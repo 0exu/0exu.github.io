@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const rssUrl = 'https://feeds.feedburner.com/TheHackersNews';
     const proxyUrl = 'https://api.codetabs.com/v1/proxy/?quest=' + rssUrl;
 
-    const ITEMS_PER_PAGE = 12;
+    const ITEMS_PER_PAGE = 9;
     let currentPage = 0;
     let newsItems = []; 
 
