@@ -97,7 +97,7 @@
 
 #sidebar-video-list ul.nested {
     display: none;
-    margin-left: 25px;
+    margin-left: 30px;
     position: relative;
 }
 
@@ -109,27 +109,27 @@
 #sidebar-video-list ul.nested li::before {
     content: "";
     position: absolute;
-    left: -15px;
-    top: -10px; /* Start from above to connect */
+    left: -18px;
+    top: -10px;
     width: 1px;
     height: calc(100% + 10px);
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(14, 113, 185, 0.2);
 }
 
 /* Stop vertical line for the last item */
 #sidebar-video-list ul.nested li:last-child::before {
-    height: 30px; /* Adjust to stop at the horizontal line level */
+    height: 30px;
 }
 
 /* Horizontal line for each item */
 .youtube-sidebar li::after {
     content: "";
     position: absolute;
-    left: -15px;
+    left: -18px;
     top: 20px;
-    width: 15px;
+    width: 12px;
     height: 1px;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(14, 113, 185, 0.2);
 }
 
 /* Folders don't need the horizontal line on the top level */
@@ -139,7 +139,7 @@
 
 .youtube-sidebar li {
     position: relative;
-    padding: 5px 0;
+    padding: 2px 0;
 }
 
 .sidebar-title { 
@@ -151,6 +151,11 @@
     letter-spacing: 2px; 
     text-transform: uppercase; 
     font-weight: 900; 
+}
+
+#youtube-main-content {
+    flex: 1;
+    min-width: 0;
 }
 
 .youtube-sidebar .folder-label { 
