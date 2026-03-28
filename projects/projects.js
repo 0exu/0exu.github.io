@@ -109,7 +109,7 @@ const tools = [
     name: "0scam-browse",
     img: "../back/js-logo.png",
     desc: "An extension pack for secure user from scam links and websites.",
-    category: "python",
+    category: "javascript",
     gitlab: true,
   },
   {
