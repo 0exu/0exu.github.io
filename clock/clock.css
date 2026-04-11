@@ -67,6 +67,87 @@
     transition: all 0.2s;
     font-size: 0.75rem;
     border-radius: var(--radius);
+    position: relative;
+    overflow: hidden;
+}
+
+.pin-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.pin-content img {
+    width: 20px;
+    height: 20px;
+}
+
+/* 3-DOT MENU STYLES */
+.pin-menu-wrapper {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 20;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.pin-slot:hover .pin-menu-wrapper {
+    opacity: 1;
+}
+
+.pin-menu-trigger {
+    background: transparent;
+    border: none;
+    color: var(--fg);
+    cursor: pointer;
+    padding: 5px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pin-menu-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--white);
+    border: var(--border);
+    box-shadow: 4px 4px 0px 0px var(--fg);
+    border-radius: var(--radius);
+    padding: 5px;
+    display: none;
+    min-width: 100px;
+}
+
+.pin-menu-dropdown.active {
+    display: block;
+}
+
+.pin-menu-dropdown button {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 8px 12px;
+    text-align: left;
+    font-family: var(--font-main);
+    font-weight: 900;
+    font-size: 0.75rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary);
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.pin-menu-dropdown button:hover {
+    background: var(--cream);
 }
 
 .pin-slot:hover {
@@ -126,12 +207,18 @@
     font-size: 1rem;
 }
 
-/* SEARCH TERMINAL - INTEGRATED INTO CENTER */
+/* SEARCH TERMINAL - FIXED TO BOTTOM */
 .search-terminal-container {
     width: 100%;
+    max-width: 700px;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
 }
 
 .search-engine-selector {
@@ -153,6 +240,13 @@
     transition: all 0.2s;
     font-size: 1.1rem;
     border-radius: var(--radius);
+    color: var(--fg);
+}
+
+.engine-pill:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px 0px var(--fg);
+    background: var(--cream);
 }
 
 .engine-pill.active { 
@@ -164,12 +258,31 @@
 
 .search-form-core { 
     background: var(--white); 
-    border: var(--border);
+    border: 4px solid transparent; 
     display: flex; 
     align-items: center;
     padding: 5px 15px; 
     box-shadow: var(--shadow);
     border-radius: var(--radius);
+    position: relative;
+    background-clip: padding-box;
+}
+
+/* ANIMATED GRADIENT BORDER (SPARKLE) */
+.search-form-core::before {
+    content: '';
+    position: absolute;
+    top: -4px; bottom: -4px; left: -4px; right: -4px;
+    background: linear-gradient(90deg, #ff0000, #00ff00, #0000ff, #ffff00, #ff00ff, #ff0000);
+    background-size: 400% 100%;
+    z-index: -1;
+    border-radius: calc(var(--radius) + 2px);
+    animation: border-sparkle 4s linear infinite;
+}
+
+@keyframes border-sparkle {
+    0% { background-position: 0% center; }
+    100% { background-position: 400% center; }
 }
 
 .search-form-core input { 
@@ -276,27 +389,24 @@
     .clock-body { height: auto; overflow: auto; }
     .clock-body .content { padding-bottom: 40px; }
     .pinned-vault {
-        position: relative;
-        top: 0;
-        transform: none;
-        left: 0;
-        right: 0;
-        width: 100%;
-        max-width: 600px;
-        margin: 0 auto 30px auto;
+        display: none; /* HIDE PIN TABS ON SMALL/MEDIUM SCREENS */
     }
     .chronos-viewport {
         flex-direction: column;
         padding: 20px;
         min-height: 0;
     }
-    .vault-grid {
-        grid-template-columns: repeat(4, 1fr);
+    .search-terminal-container {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        transform: none;
+        margin: 40px auto;
+        padding: 0 20px;
     }
 }
 
 @media (max-width: 900px) {
-    .vault-grid { grid-template-columns: repeat(2, 1fr); }
     #display-time { font-size: 4rem; padding: 20px; }
     .digital-chronos-box { padding: 30px 20px; }
 }

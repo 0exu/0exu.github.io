@@ -87,13 +87,22 @@ function loadPins() {
             const slot = document.createElement('div');
             
             if (pin) {
-                slot.className = 'pin-slot';
+                slot.className = 'pin-slot has-pin';
                 slot.innerHTML = `
-                    <a href="${pin.url}" target="_blank" style="text-decoration:none; display:flex; flex-direction:column; align-items:center; width:100%; height:100%; justify-content:center;">
+                    <div class="pin-content" onclick="window.open('${pin.url}', '_blank')">
                         <img src="https://www.google.com/s2/favicons?domain=${pin.url}&sz=32" alt="icon">
                         <span>${pin.title}</span>
-                    </a>
-                    <div class="delete-pin" onclick="deletePin(${idx}, event)"><i class="fas fa-times"></i></div>
+                    </div>
+                    <div class="pin-menu-wrapper">
+                        <button class="pin-menu-trigger" onclick="togglePinMenu(event, this)">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                        <div class="pin-menu-dropdown">
+                            <button class="delete-btn" onclick="deletePin(${idx}, event)">
+                                <i class="fas fa-trash"></i> Delete
+                            </button>
+                        </div>
+                    </div>
                 `;
             } else {
                 slot.className = 'pin-slot empty';
@@ -153,3 +162,21 @@ window.deletePin = function(index, e) {
     localStorage.setItem('0warn_pins', JSON.stringify(pins));
     loadPins();
 };
+
+window.togglePinMenu = function(e, btn) {
+    if(e) e.stopPropagation();
+    const dropdown = btn.nextElementSibling;
+    const isActive = dropdown.classList.contains('active');
+    
+    // Close all open menus first
+    document.querySelectorAll('.pin-menu-dropdown').forEach(d => d.classList.remove('active'));
+    
+    if (!isActive) {
+        dropdown.classList.add('active');
+    }
+};
+
+// Close menus when clicking anywhere else
+document.addEventListener('click', () => {
+    document.querySelectorAll('.pin-menu-dropdown').forEach(d => d.classList.remove('active'));
+});
