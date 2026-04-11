@@ -16,25 +16,26 @@
 
 /* SIDEBAR - TRULY FIXED POSITION */
 .youtube-sidebar {
-  flex: 0 0 320px;
-  width: 320px;
+  flex: 0 0 400px;
+  width: 400px;
   background: var(--white);
   border: var(--border);
   padding: 25px;
   position: fixed;
   top: 120px; /* Below fixed header with gap */
-  left: 40px; /* Align with content max-width if possible, but simpler to use fixed left */
+  left: 40px; /* Align with content max-width if possible */
   max-height: calc(100vh - 180px);
   overflow-y: auto;
   box-shadow: var(--shadow);
   z-index: 100;
+  border-radius: var(--radius);
 }
 
 /* Adjust main content to not be covered by fixed sidebar */
 #youtube-main-content {
     flex: 1;
     min-width: 0;
-    margin-left: 350px; /* Width of sidebar + gap */
+    margin-left: 440px; /* Width of sidebar (400) + gap (40) */
 }
 
 .sidebar-title { 
