@@ -38,17 +38,16 @@
     <div class="power-container">
       <!-- CONTROL CENTER -->
       <div class="terminal-controls">
-        <div class="search-wrap">
-          <i class="fas fa-terminal"></i>
-          <input type="text" id="project-search" placeholder="Search resources... ( Press '/' to focus )" autocomplete="off">
+        <div class="search-row">
+          <div class="search-wrap">
+            <i class="fas fa-terminal"></i>
+            <input type="text" id="project-search" placeholder="Search resources... ( Press '/' to focus )" autocomplete="off">
+          </div>
+          <button class="gitlab-toggle-badge" id="gitlab-filter" title="View GitLab Profile">
+            <i class="fab fa-gitlab"></i> GITLAB
+          </button>
         </div>
-        <div class="filter-tabs" id="filter-tabs">
-          <button class="filter-pill active" data-filter="all">ALL</button>
-          <button class="filter-pill" data-filter="gitlab"><i class="fab fa-gitlab"></i> GITLAB</button>
-          <button class="filter-pill" data-filter="python">PYTHON</button>
-          <button class="filter-pill" data-filter="bash">BASH</button>
-          <button class="filter-pill" data-filter="golang">GOLANG</button>
-        </div>
+        
         <div class="vault-meta">
           <span>NODES: <b id="node-count">0</b></span>
           <span>ARMORY: <b>STABLE</b></span>

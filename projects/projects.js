@@ -152,32 +152,30 @@ const tools = [
 document.addEventListener("DOMContentLoaded", function () {
   const grid = document.getElementById("tools-grid");
   const search = document.getElementById("project-search");
-  const pills = document.querySelectorAll(".filter-pill");
+  const gitlabBtn = document.getElementById("gitlab-filter");
   const countEl = document.getElementById("node-count");
 
-  let currentFilter = "all";
   let searchQuery = "";
 
   function renderTools() {
+    console.log("Rendering tools, primary repository text should be gone.");
+    if (!grid) return;
     grid.innerHTML = "";
+    
     const filtered = tools.filter((t) => {
-      let matchesFilter =
-        currentFilter === "all" || t.category === currentFilter;
-
-      // GitLab/GitHub Specific Filtering
-      if (currentFilter === "gitlab") matchesFilter = t.gitlab;
-
+      // Search Filter
       const matchesSearch =
         t.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         t.desc.toLowerCase().includes(searchQuery.toLowerCase());
-      return matchesFilter && matchesSearch;
+
+      return matchesSearch;
     });
 
     if (countEl) countEl.textContent = filtered.length;
 
     filtered.forEach((t) => {
       const card = document.createElement("div");
-      card.className = "tool-card scroll-reveal show";
+      card.className = "tool-card show";
 
       const gitlabUrl = `https://gitlab.com/0warn/${t.name}`;
 
@@ -185,7 +183,6 @@ document.addEventListener("DOMContentLoaded", function () {
       if (t.gitlab) {
         actionButtons = `
                     <a href="${gitlabUrl}" class="action-btn gitlab-btn" target="_blank"><i class="fab fa-gitlab"></i> GITLAB</a>
-                    <div class="migration-hint">Primary Repository</div>
                 `;
       }
 
@@ -230,13 +227,8 @@ document.addEventListener("DOMContentLoaded", function () {
     renderTools();
   });
 
-  pills.forEach((pill) => {
-    pill.addEventListener("click", () => {
-      pills.forEach((p) => p.classList.remove("active"));
-      pill.classList.add("active");
-      currentFilter = pill.dataset.filter;
-      renderTools();
-    });
+  gitlabBtn?.addEventListener("click", () => {
+    window.open("https://gitlab.com/0warn", "_blank");
   });
 
   // Hotkeys
@@ -247,6 +239,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  // Initial render
   renderTools();
 });
 
