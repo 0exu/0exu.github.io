@@ -2,21 +2,21 @@
 const tools = [
   {
     name: "defender",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/BASH_LOGO_WITHOUT_BACKGROUND.png/250px-BASH_LOGO_WITHOUT_BACKGROUND.png",
+    img: "../back/bash.png",
     desc: "Advanced system hardening and security auditing script for Linux environments.",
     category: "bash",
     gitlab: true,
   },
   {
     name: "harekrishna",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/BASH_LOGO_WITHOUT_BACKGROUND.png/250px-BASH_LOGO_WITHOUT_BACKGROUND.png",
+    img: "../back/bash.png",
     desc: "Secure your network with tor anonymity and mac number randomizer.",
     category: "bash",
     gitlab: true,
   },
   {
     name: "mahakal",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/BASH_LOGO_WITHOUT_BACKGROUND.png/250px-BASH_LOGO_WITHOUT_BACKGROUND.png",
+    img: "../back/bash.png",
     desc: "Comprehensive penetration testing framework for various attack vectors with post exploitation and recon phases.",
     category: "bash",
     gitlab: true,

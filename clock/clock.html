@@ -12,67 +12,70 @@
   <link rel="stylesheet" href="./clock.css">
 </head>
 <body class="clock-body">
-  <div class="bg-parallax-layer" id="bg-parallax"></div>
-  <canvas id="particleCanvas"></canvas>
+ 
   <div class="content">
     <header>
-      <h1 class="logo-text"><a href="../"><span>ZERO</span><span>WARN</span></a></h1>
-      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+      <h1 class="logo-text">
+        <a href="../"><span>0</span><span>warn</span></a>
+      </h1>
       <nav id="nav-menu">
-        <a href="../index.html" title="Home"><i class="fas fa-home"></i><span>Home</span></a>
-        <a href="../projects/projects.html" title="Projects"><i class="fas fa-code"></i><span>Projects</span></a>
-        <a href="../news/news.html" title="News"><i class="fas fa-newspaper"></i><span>News</span></a>
-        <a href="../pvideo/pvideo.html" title="Vlog"><i class="fas fa-video"></i><span>Vlog</span></a>
-        <a href="../funthing/funthing.html" title="Fun"><i class="fas fa-gamepad"></i><span>Fun</span></a>
+        <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="../projects/projects.html"><i class="fas fa-code"></i> Projects</a>
+        <a href="../news/news.html"><i class="fas fa-newspaper"></i> News</a>
+        <a href="../pvideo/pvideo.html"><i class="fas fa-video"></i> Vlog</a>
+        <a href="../funthing/funthing.html"><i class="fas fa-gamepad"></i> Fun</a>
       </nav>
-      <a href="./clock.html" title="Clock" class="nav-clock-btn active">
-          <i class="fas fa-clock"></i>
-          <span id="clock">00:00:00</span>
-      </a>
-      <button class="theme-toggle-btn" id="theme-toggle" title="Toggle Theme">
-          <i class="fas fa-moon"></i>
-      </button>
+      <div style="display: flex; gap: 15px; align-items: center;">
+          <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
+          <a href="../clock/clock.html" class="nav-clock-btn active">
+              <i class="fas fa-clock"></i>
+              <span id="clock">00:00:00</span>
+          </a>
+      </div>
     </header>
 
     <div class="chronos-viewport">
-      <aside class="pinned-vault left-side glass-effect">
+      <!-- Left Sidebar -->
+      <aside class="pinned-vault left-side">
         <div id="pinned-grid-left" class="vault-grid"></div>
       </aside>
 
+      <!-- Center Dashboard -->
       <main class="chronos-center">
         <div class="digital-chronos-wrapper">
-          <div class="digital-chronos-glow"></div>
-          <div class="digital-chronos-box glass-effect">
+          <div class="digital-chronos-box">
             <h2 id="display-time">00:00:00</h2>
             <p id="display-date">Saturday, March 21, 2026</p>
           </div>
         </div>
+
+        <div class="search-terminal-container">
+          <div class="search-engine-selector">
+            <button class="engine-pill" onclick="setEngine('google', this)"><i class="fab fa-google"></i></button>
+            <button class="engine-pill active" onclick="setEngine('duckduckgo', this)"><i class="fas fa-shield-alt"></i></button>
+            <button class="engine-pill" onclick="setEngine('github', this)"><i class="fab fa-github"></i></button>
+            <button class="engine-pill" onclick="setEngine('gitlab', this)"><i class="fab fa-gitlab"></i></button>
+            <button class="engine-pill" onclick="setEngine('yahoo', this)"><i class="fab fa-yahoo"></i></button>
+            <button class="engine-pill" onclick="setEngine('bing', this)"><i class="fab fa-microsoft"></i></button>
+          </div>
+          <div class="animated-border-wrap">
+            <form class="search-form-core" onsubmit="return handleSearch(event)">
+              <input type="text" id="search-input" placeholder="> [CTRL + E] Search Secure..." autocomplete="off">
+              <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+          </div>
+        </div>
       </main>
 
-      <aside class="pinned-vault right-side glass-effect">
+      <!-- Right Sidebar -->
+      <aside class="pinned-vault right-side">
         <div id="pinned-grid-right" class="vault-grid"></div>
       </aside>
     </div>
 
-    <div class="search-terminal-container">
-      <div class="search-engine-selector">
-        <button class="engine-pill" onclick="setEngine('google', this)"><i class="fab fa-google"></i></button>
-        <button class="engine-pill active" onclick="setEngine('duckduckgo', this)"><i class="fas fa-shield-alt"></i></button>
-        <button class="engine-pill" onclick="setEngine('github', this)"><i class="fab fa-github"></i></button>
-        <button class="engine-pill" onclick="setEngine('gitlab', this)"><i class="fab fa-gitlab"></i></button>
-        <button class="engine-pill" onclick="setEngine('yahoo', this)"><i class="fab fa-yahoo"></i></button>
-        <button class="engine-pill" onclick="setEngine('bing', this)"><i class="fab fa-microsoft"></i></button>
-      </div>
-      <div class="animated-border-wrap">
-        <form class="search-form-core" onsubmit="return handleSearch(event)">
-          <input type="text" id="search-input" placeholder="> [CTRL + E] Search Secure..." autocomplete="off">
-          <button type="submit"><i class="fas fa-search"></i></button>
-        </form>
-      </div>
-    </div>
-
+    <!-- Modal for adding pins -->
     <div id="pin-modal" class="modal-overlay">
-      <div class="modal-window glass-effect">
+      <div class="modal-window">
         <h3>NEW_PIN</h3>
         <input type="text" id="pin-title" placeholder="Title">
         <input type="text" id="pin-url" placeholder="https://...">
@@ -83,7 +86,6 @@
       </div>
     </div>
 
-    <!-- FOOTER REMOVED FROM CLOCK PAGE -->
   </div>
   
   <script src="../script.js"></script>

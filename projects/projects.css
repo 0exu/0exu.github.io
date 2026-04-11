@@ -1,243 +1,203 @@
-/* Power Vault - Skeuomorphic Dual Theme Design */
+/* NEO-BRUTALIST PROJECTS PAGE */
 
 .power-container {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 40px auto;
-    padding: 0 40px;
+    padding: 0 20px;
 }
 
 /* --- CONTROL CENTER --- */
 .terminal-controls {
-    background: var(--surface-raised);
-    border: 1px solid var(--glass-border);
-    border-radius: 24px;
-    padding: 25px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background: var(--cream);
+    border: var(--border);
+    padding: 30px;
     margin-bottom: 40px;
-    box-shadow: var(--shadow-raised);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .search-wrap {
-    flex: 1;
-    max-width: 400px;
+    background: var(--white);
+    border: var(--border);
+    padding: 15px 20px;
     display: flex;
     align-items: center;
     gap: 15px;
-    background: var(--surface-inset);
-    padding: 12px 20px;
-    border-radius: 14px;
-    box-shadow: var(--shadow-base);
+    box-shadow: 4px 4px 0px 0px var(--fg);
 }
 
 .search-wrap i {
-    color: var(--primary-glow);
-    font-size: 1rem;
+    color: var(--primary);
+    font-size: 1.2rem;
 }
 
 .search-wrap input {
     background: transparent;
     border: none;
     outline: none;
-    color: var(--text-main);
-    font-family: 'Roboto Mono', monospace;
-    font-size: 0.9rem;
+    color: var(--fg);
+    font-family: var(--font-mono);
+    font-size: 1rem;
     width: 100%;
 }
 
 .filter-tabs {
     display: flex;
-    gap: 12px;
+    gap: 15px;
     flex-wrap: wrap;
-    justify-content: center;
 }
 
 .filter-pill {
-    background: var(--surface-raised);
-    border: 1px solid var(--glass-border);
-    color: var(--text-muted);
+    background: var(--white);
+    border: var(--border);
+    color: var(--fg);
     padding: 10px 20px;
-    border-radius: 12px;
-    font-size: 0.75rem;
-    font-weight: bold;
+    font-size: 0.9rem;
+    font-weight: 900;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: var(--shadow-raised);
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    box-shadow: 4px 4px 0px 0px var(--fg);
+    transition: all 0.2s;
 }
 
-.filter-pill:hover {
-    transform: translateY(-2px);
-    color: var(--text-main);
-    box-shadow: var(--shadow-hover);
+.filter-pill:hover, .filter-pill.active {
+    background: var(--primary);
+    color: var(--white);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px 0px var(--fg);
 }
 
 .filter-pill.active {
-    background: var(--surface-raised);
-    color: var(--primary-glow);
-    box-shadow: var(--shadow-pressed);
-    transform: translateY(2px);
+    background: var(--secondary);
+    color: var(--fg);
 }
 
 .vault-meta {
     display: flex;
-    flex-direction: column;
-    gap: 5px;
-    font-size: 0.7rem;
-    color: var(--text-muted);
-    letter-spacing: 1px;
-    text-align: right;
+    gap: 20px;
+    font-size: 0.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
 }
 
-.vault-meta b {
-    color: var(--accent-glow);
-}
-
-/* --- THE DATA GRID --- */
+/* --- DATA GRID --- */
 .power-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    padding-bottom: 80px;
+    padding-bottom: 60px;
 }
 
-/* THE SKEUOMORPHIC CARD */
+/* THE NEO-BRUTALIST CARD */
 .tool-card {
+    background: var(--white);
+    border: var(--border);
+    padding: 30px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    background: var(--surface-raised);
-    border-radius: 28px;
-    padding: 30px;
-    box-shadow: var(--shadow-raised);
-    transition: all 0.3s ease;
-    transform-style: preserve-3d;
-    perspective: 1000px;
+    gap: 15px;
 }
 
 .tool-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-hover);
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0px 0px var(--fg);
 }
 
-.card-header { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: flex-start; 
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
-.tool-card img { 
-    width: 55px; 
-    height: 55px; 
-    filter: drop-shadow(0 0 10px rgba(0, 247, 255, 0.2)); 
-    background: var(--surface-inset);
-    padding: 10px;
-    border-radius: 12px;
-    box-shadow: var(--shadow-base);
+.card-header img {
+    width: 60px;
+    height: 60px;
+    border: var(--border);
+    padding: 8px;
+    background: var(--cream);
+    box-shadow: 4px 4px 0px 0px var(--fg);
 }
 
-.category-tag { 
-    font-size: 0.6rem; 
-    font-weight: 900; 
-    background: var(--surface-inset); 
-    padding: 6px 12px; 
-    border-radius: 6px; 
-    color: var(--primary-glow); 
-    letter-spacing: 1.5px; 
-    box-shadow: var(--shadow-base);
+.category-tag {
+    background: var(--accent);
+    color: var(--fg);
+    border: var(--border);
+    padding: 5px 10px;
+    font-size: 0.7rem;
+    font-weight: 900;
+    box-shadow: 2px 2px 0px 0px var(--fg);
 }
 
-.card-body h3 { 
-    font-size: 1.3rem; 
-    color: var(--text-main); 
-    margin-bottom: 12px; 
-    font-weight: 900; 
-    letter-spacing: 1px;
+.card-body h3 {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin: 10px 0;
+    line-height: 1.1;
 }
 
-.card-desc { 
-    font-size: 0.85rem; 
-    color: var(--text-muted); 
-    line-height: 1.6; 
-    height: 4.8em; 
-    overflow: hidden; 
-    background: var(--surface-inset);
+.card-desc {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    background: var(--cream);
     padding: 15px;
-    border-radius: 12px;
-    box-shadow: var(--shadow-base);
+    border: var(--border);
+    margin-bottom: 10px;
+    flex-grow: 1; /* Allow description to take space */
 }
 
-.card-actions { 
-    display: flex; 
-    gap: 15px; 
-    margin-top: 10px; 
+.card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.action-btn { 
-    flex: 1; 
-    background: var(--surface-raised); 
-    border: none; 
-    color: var(--text-main); 
-    padding: 12px; 
-    border-radius: 12px; 
-    font-size: 0.7rem; 
-    font-weight: bold; 
-    cursor: pointer; 
-    transition: all 0.3s ease; 
-    text-decoration: none; 
-    text-align: center; 
-    box-shadow: var(--shadow-raised);
+.action-btn {
+    background: var(--white);
+    border: var(--border);
+    padding: 12px;
+    font-weight: 900;
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: var(--fg);
+    text-align: center;
+    box-shadow: 4px 4px 0px 0px var(--fg);
+    transition: all 0.2s;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
 }
 
-.action-btn:hover { 
-    transform: translateY(-2px);
-    color: var(--primary-glow);
-    box-shadow: var(--shadow-hover);
+.action-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px 0px var(--fg);
+    background: var(--primary);
+    color: var(--white);
 }
 
 .action-btn:active {
-    transform: translateY(2px);
-    box-shadow: var(--shadow-pressed);
-}
-
-.gitlab-btn { 
-    color: #e24329; 
-}
-
-.github-legacy-btn { 
-    color: var(--text-muted);
-    opacity: 0.8;
-}
-
-.github-legacy-btn:hover {
-    opacity: 1;
-    color: var(--text-main);
-}
-
-.btn-clone { 
-    color: var(--secondary-glow); 
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px 0px var(--fg);
 }
 
 .migration-hint {
-    font-size: 0.6rem;
-    color: var(--text-muted);
-    text-align: center;
-    margin-top: -10px;
-    letter-spacing: 1px;
+    font-size: 0.65rem;
+    font-weight: 900;
     text-transform: uppercase;
+    color: var(--fg);
+    text-align: center;
+    margin-top: -5px;
+    margin-bottom: 5px;
 }
 
-@media (max-width: 1200px) { .power-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 850px) {
+@media (max-width: 1100px) {
+    .power-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+}
+
+@media (max-width: 750px) {
     .power-grid { grid-template-columns: 1fr; }
-    .terminal-controls { flex-direction: column; gap: 25px; padding: 25px; }
-    .search-wrap { max-width: 100%; }
-    .vault-meta { text-align: center; }
+    .terminal-controls { padding: 20px; }
 }

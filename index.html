@@ -1,122 +1,118 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>0warn | Cyber Security & Dev</title>
+  <title>0warn | Securing Code & Systems</title>
   <link rel="stylesheet" href="./home.css" />
   <link rel="icon" sizes="70x70" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/OMSWASTRA_WITHOUT_BACKGORUND_2.png/250px-OMSWASTRA_WITHOUT_BACKGORUND_2.png" type="image/png">
-  <link rel="apple-touch-icon" sizes="70x70" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/OMSWASTRA_WITHOUT_BACKGORUND_2.png/250px-OMSWASTRA_WITHOUT_BACKGORUND_2.png"> 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=Roboto+Mono:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
 <body>
-  <!-- System Overlay/Loader -->
-  <div id="system-overlay">
-    <div class="loader-text">Initializing System...</div>
-    <div class="loader-bar"></div>
+  <!-- Parallax Background Layers -->
+  <div class="parallax-container">
+    <div class="parallax-shape shape-star-pink" data-speed="0.2"></div>
+    <div class="parallax-shape shape-star-green" data-speed="0.5"></div>
   </div>
 
-  <div class="bg-parallax-layer" id="bg-parallax"></div>
-  <canvas id="particleCanvas"></canvas>
+  <header>
+    <h1 class="logo-text">
+      <a href="./"><span>0</span><span>warn</span></a>
+    </h1>
+    <nav id="nav-menu">
+      <a href="./index.html" class="active"><i class="fas fa-home"></i> Home</a>
+      <a href="./projects/projects.html"><i class="fas fa-code"></i> Projects</a>
+      <a href="./news/news.html"><i class="fas fa-newspaper"></i> News</a>
+      <a href="./pvideo/pvideo.html"><i class="fas fa-video"></i> Vlog</a>
+      <a href="./funthing/funthing.html"><i class="fas fa-gamepad"></i> Fun</a>
+    </nav>
+    <div style="display: flex; gap: 15px; align-items: center;">
+        <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
+        <a href="./clock/clock.html" class="nav-clock-btn">
+            <i class="fas fa-clock"></i>
+            <span id="clock">00:00:00</span>
+        </a>
+    </div>
+  </header>
 
   <div class="content">
-    <header>
-      <h1 class="logo-text">
-        <a href="./"><span>ZERO</span><span>WARN</span></a>
-      </h1>
-      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-      <nav id="nav-menu">
-        <a href="./index.html" title="Home" class="active"><i class="fas fa-home"></i><span>Home</span></a>
-        <a href="./projects/projects.html"><i class="fas fa-code"></i><span>Projects</span></a>
-        <a href="./news/news.html"><i class="fas fa-newspaper"></i><span>News</span></a>
-        <a href="./pvideo/pvideo.html"><i class="fas fa-video"></i><span>Vlog</span></a>
-        <a href="./funthing/funthing.html"><i class="fas fa-gamepad"></i><span>Fun</span></a>
-      </nav>
-      <a href="./clock/clock.html" title="Clock" class="nav-clock-btn">
-          <i class="fas fa-clock"></i>
-          <span id="clock">00:00:00</span>
-      </a>
-      <button class="theme-toggle-btn" id="theme-toggle" title="Toggle Theme">
-          <i class="fas fa-moon"></i>
-      </button>
-    </header>
+    <section class="hero-section">
+      <h1>Securing Code,<br/>Engineering Systems.</h1>
+      <p>Senior Cyber Security Researcher and DevOps Engineer. Specializing in automated threat detection, secure infrastructure, and high-performance architectures.</p>
+      
+      <div class="cta-box">
+        <div class="cta-input-group">
+          <input type="text" class="cta-input" placeholder="Search my codebase... (e.g. Next.js, React)" />
+          <button class="cta-btn">Search</button>
+        </div>
+        <div class="example-tags">
+          <button class="tag-btn">Next.js</button>
+          <button class="tag-btn">Security</button>
+          <button class="tag-btn">React</button>
+          <button class="tag-btn">DevOps</button>
+          <button class="tag-btn">Linux</button>
+        </div>
+      </div>
+    </section>
 
     <main class="bento-grid">
-      <!-- Hero Split Section -->
-      <div class="hero-split scroll-reveal">
-        <div class="hero-text-panel">
-          <h2>Securing Code,<br/>Engineering Systems.</h2>
-          <p>Senior Cyber Security Researcher and DevOps Engineer. Specializing in automated threat detection, secure infrastructure, and high-performance architectures driven by a GitLab-first ecosystem.</p>
-          <div class="hero-actions">
-            <a href="./projects/projects.html" class="primary-btn"><i class="fab fa-gitlab"></i> View Operations</a>
-          </div>
-        </div>
-        <div class="hero-visual-panel">
-          <div class="hero-logo-container">
-            <div class="logo-glitch"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Stats / Highlights Section -->
-      <div class="bento-item scroll-reveal" style="text-align: center;">
+      <!-- Stats -->
+      <div class="bento-item">
         <h3 class="section-title">PROJECTS</h3>
-        <p class="stat-value" style="color: var(--primary-glow); font-size: 2.5rem;">28+</p>
+        <p class="stat-value">28+</p>
       </div>
 
-      <div class="bento-item scroll-reveal" style="text-align: center;">
+      <div class="bento-item">
         <h3 class="section-title">CORE</h3>
-        <p class="stat-value" style="color: var(--secondary-glow); font-size: 1.5rem;">DevSecOps (DSO)</p>
+        <p style="font-size: 1.2rem; font-weight: 700;">DevSecOps (DSO)</p>
       </div>
 
-      <!-- System Status Card -->
-      <div class="bento-item scroll-reveal" style="text-align: center;">
-        <i class="fas fa-shield-alt" style="font-size: 2rem; color: var(--accent-glow); margin-bottom: 10px;"></i>
+      <div class="bento-item">
         <h3 class="section-title">STATUS</h3>
-        <p class="stat-value" style="color: var(--accent-glow);">ENCRYPTED</p>
+        <p style="color: var(--primary); font-weight: 900; font-size: 1.5rem;">ENCRYPTED</p>
       </div>
 
-      <div class="bento-item scroll-reveal" style="text-align: center;">
+      <div class="bento-item">
         <h3 class="section-title">ACCESS IP</h3>
-        <p id="ip" class="stat-value" style="color: var(--text-main); font-size: 1.2rem;">FETCHING...</p>
+        <p id="ip" style="font-family: var(--font-mono); font-weight: 700;">FETCHING...</p>
       </div>
 
-      <!-- About Section -->
-      <div class="bento-item item-wide scroll-reveal about-panel">
+      <!-- About -->
+      <div class="bento-item item-wide about-panel">
         <h3 class="section-title">SYSTEM PROFILE</h3>
-        <p>I architect secure automation pipelines and conduct deep security audits. My workflow heavily integrates GitLab CI/CD, Go, and Python to build resilient backends and comprehensive testing frameworks. Currently migrating legacy systems into unified, high-assurance environments.</p>
+        <p>I architect secure automation pipelines and conduct deep security audits. My workflow heavily integrates GitLab CI/CD, Go, and Python to build resilient backends and comprehensive testing frameworks.</p>
       </div>
 
-      <!-- Workflow / Tools Section -->
-      <div class="bento-item item-wide scroll-reveal skills-panel">
+      <!-- Workflow -->
+      <div class="bento-item item-wide">
         <h3 class="section-title">WORKFLOW & TOOLS</h3>
         <div class="skills-grid">
-          <span class="skill-tile"><i class="fab fa-gitlab"></i> GitLab CI</span>
-          <span class="skill-tile"><i class="fab fa-docker"></i> Docker</span>
-          <span class="skill-tile"><i class="fab fa-linux"></i> Linux / Bash</span>
-          <span class="skill-tile"><i class="fas fa-shield-virus"></i> PenTest</span>
-          <span class="skill-tile"><i class="fab fa-python"></i> Python</span>
-          <span class="skill-tile"><i class="fas fa-server"></i> Go</span>
+          <div class="skill-tile">GitLab CI</div>
+          <div class="skill-tile">Docker</div>
+          <div class="skill-tile">Linux</div>
+          <div class="skill-tile">PenTest</div>
+          <div class="skill-tile">Python</div>
+          <div class="skill-tile">Go</div>
         </div>
       </div>
 
-      <!-- Terminal Log Box -->
-      <div class="bento-item item-wide scroll-reveal">
+      <!-- Terminal -->
+      <div class="bento-item item-wide" style="min-height: 300px;">
         <h3 class="section-title">INIT LOG</h3>
         <div class="terminal-text" id="terminal-log">
-            <p class="typing-text">> root@0warn:~# _</p>
+            <p>> root@0warn:~# _</p>
         </div>
       </div>
 
-      <!-- Contact Section -->
-      <div class="bento-item item-wide scroll-reveal contact-panel">
+      <!-- Contact -->
+      <div class="bento-item item-wide">
         <h3 class="section-title">CONTACT</h3>
-        <form class="contact-form">
-          <input type="email" placeholder="ENCRYPTED_EMAIL" required>
-          <textarea placeholder="SECURE_MESSAGE" rows="3" required></textarea>
-          <button type="submit" class="action-btn">TRANSMIT</button>
-        </form>
+        <div style="display: flex; flex-direction: column; gap: 15px;">
+            <input type="email" placeholder="ENCRYPTED_EMAIL" style="padding: 15px; border: var(--border); box-shadow: 4px 4px 0px 0px var(--fg);">
+            <textarea placeholder="SECURE_MESSAGE" rows="3" style="padding: 15px; border: var(--border); box-shadow: 4px 4px 0px 0px var(--fg);"></textarea>
+            <button class="cta-btn" style="padding: 15px;">TRANSMIT</button>
+        </div>
       </div>
     </main>
 
@@ -126,6 +122,5 @@
   </div>
 
   <script src="./script.js"></script>
-  <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="omswastra" data-description="Support me on Buy me a coffee!" data-message="Welcome, to home page. Can i get one cup of coffee..." data-color="#FF5F5F" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
 </body>
 </html>
