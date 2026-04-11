@@ -57,57 +57,48 @@
           <div class="pass-info" id="pass-details" style="margin-top: 15px; font-weight: 700; opacity: 0.7;">Enter a password to analyze security level.</div>
         </div>
 
-        <div class="lab-row">
-          <!-- Cipher Tools -->
-          <div class="fun-card crypto-panel">
-            <h3>
-              <span>🔐 CIPHER TOOLS</span>
-              <button onclick="copyToClipboard('crypto-input', this)" class="icon-btn" title="Copy Output"><i class="fas fa-copy"></i></button>
-            </h3>
-            <textarea id="crypto-input" placeholder="Enter text to encode/decode..."></textarea>
-            <div class="cipher-btns">
-              <button onclick="cipher('b64-enc')">B64 ENC</button>
-              <button onclick="cipher('b64-dec')">B64 DEC</button>
-              <button onclick="cipher('uri-enc')">URL ENC</button>
-              <button onclick="cipher('uri-dec')">URL DEC</button>
-              <button onclick="cipher('rev')">REVERSE</button>
-            </div>
-          </div>
-
-          <!-- JSON Formatter -->
-          <div class="fun-card json-panel">
-            <h3>
-              <span>📦 JSON FORMAT</span>
-              <button onclick="copyToClipboard('json-input', this)" class="icon-btn" title="Copy JSON"><i class="fas fa-copy"></i></button>
-            </h3>
-            <textarea id="json-input" placeholder="Paste JSON here..."></textarea>
-            <div class="json-btns">
-              <button onclick="formatJSON('pretty')">BEAUTIFY</button>
-              <button onclick="formatJSON('minify')">MINIFY</button>
-            </div>
+        <!-- Cipher Tools -->
+        <div class="fun-card crypto-panel full-width-card">
+          <h3>
+            <span>🔐 CIPHER TOOLS</span>
+            <button onclick="copyToClipboard('crypto-input', this)" class="icon-btn" title="Copy Output"><i class="fas fa-copy"></i></button>
+          </h3>
+          <textarea id="crypto-input" placeholder="Enter text to encode/decode..."></textarea>
+          <div class="cipher-btns">
+            <button onclick="cipher('b64-enc')">B64 ENC</button>
+            <button onclick="cipher('b64-dec')">B64 DEC</button>
+            <button onclick="cipher('uri-enc')">URL ENC</button>
+            <button onclick="cipher('uri-dec')">URL DEC</button>
+            <button onclick="cipher('rev')">REVERSE</button>
           </div>
         </div>
 
-        <div class="lab-row">
-            <!-- HUD Stats -->
-            <div class="fun-card status-panel">
-              <h3>📡 SYSTEM HUD</h3>
-              <div class="hud-stats-grid">
-                <div class="stat-box"><span>RESOLUTION</span> <b id="scr-w">--</b></div>
-                <div class="stat-box"><span>LATENCY</span> <b id="ping">--</b></div>
-                <div class="stat-box"><span>UPTIME</span> <b id="uptime">0s</b></div>
-              </div>
-            </div>
+        <!-- JSON Formatter -->
+        <div class="fun-card json-panel full-width-card">
+          <h3>
+            <span>📦 JSON FORMAT</span>
+            <button onclick="copyToClipboard('json-input', this)" class="icon-btn" title="Copy JSON"><i class="fas fa-copy"></i></button>
+          </h3>
+          <textarea id="json-input" placeholder="Paste JSON here..."></textarea>
+          <div class="json-btns">
+            <button onclick="formatJSON('pretty')">BEAUTIFY</button>
+            <button onclick="formatJSON('minify')">MINIFY</button>
+          </div>
+        </div>
 
-            <!-- Empty slot or something else -->
-            <div class="fun-card" style="display: flex; justify-content: center; align-items: center; background: var(--cream);">
-                <i class="fas fa-flask" style="font-size: 3rem; color: var(--primary); opacity: 0.2;"></i>
-            </div>
+        <!-- HUD Stats -->
+        <div class="fun-card status-panel full-width-card">
+          <h3>📡 SYS HUD</h3>
+          <div class="hud-stats-grid">
+            <div class="stat-box"><span>RESOLUTION</span> <b id="scr-w">--</b></div>
+            <div class="stat-box"><span>LATENCY</span> <b id="ping">--</b></div>
+            <div class="stat-box"><span>UPTIME</span> <b id="uptime">0s</b></div>
+          </div>
         </div>
 
         <!-- Terminal (Full Width) -->
         <div class="fun-card terminal-panel full-width-card">
-          <h3>💻 INTERACTIVE SHELL</h3>
+          <h3>💻 BASH SHELL</h3>
           <div class="cyber-console" id="terminal-body">
             <div class="console-output" id="console-output">
               <p>> root@0warn:~# System online. Type 'help' for commands.</p>
