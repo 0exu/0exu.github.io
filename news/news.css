@@ -1,3 +1,7 @@
+:root {
+    --radius: 10px;
+}
+
 /* NEO-BRUTALIST NEWS PAGE */
 
 #news-section {
@@ -21,6 +25,7 @@
   box-shadow: var(--shadow);
   transition: transform 0.2s, box-shadow 0.2s;
   height: 100%;
+  border-radius: var(--radius);
 }
 
 .news-card:hover {
@@ -57,6 +62,7 @@
   display: inline-block;
   box-shadow: 4px 4px 0px 0px var(--fg);
   margin-bottom: 15px;
+  border-radius: var(--radius);
 }
 
 .news-content p {
@@ -66,6 +72,7 @@
   padding: 15px;
   border: var(--border);
   flex-grow: 1;
+  border-radius: var(--radius);
 }
 
 /* PAGINATION */
@@ -90,6 +97,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: var(--radius);
 }
 
 .news-pagination-controls button:hover:not(:disabled) {
@@ -126,6 +134,7 @@
     position: relative;
     max-height: 90vh;
     overflow-y: auto;
+    border-radius: var(--radius);
 }
 
 #modal-title { font-size: 2.5rem; font-weight: 900; margin-bottom: 20px; line-height: 1.1; }
@@ -139,6 +148,7 @@
     padding: 10px 20px;
     display: inline-block;
     box-shadow: 4px 4px 0px 0px var(--fg);
+    border-radius: var(--radius);
 }
 #modal-description { 
     background: var(--cream); 
@@ -147,6 +157,7 @@
     line-height: 1.6; 
     font-size: 1.1rem;
     margin-bottom: 30px;
+    border-radius: var(--radius);
 }
 
 #modal-readmore {
@@ -158,6 +169,7 @@
     font-weight: 900;
     text-decoration: none;
     box-shadow: 4px 4px 0px 0px var(--fg);
+    border-radius: var(--radius);
 }
 
 #modal-readmore:hover {
@@ -185,4 +197,6 @@
 
 @media (max-width: 1100px) { .news-list { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 700px) { .news-list { grid-template-columns: 1fr; } }
+
+
 

@@ -1,3 +1,7 @@
+:root {
+    --radius: 10px;
+}
+
 /* NEO-BRUTALIST FUN PAGE */
 
 .main-funthing-container {
@@ -9,6 +13,7 @@
 .fun-card {
     background: var(--white);
     border: var(--border);
+    border-radius: var(--radius);
     padding: 30px;
     box-shadow: var(--shadow);
     transition: transform 0.2s, box-shadow 0.2s;
@@ -52,6 +57,7 @@ textarea, input[type="text"], input[type="password"] {
     width: 100%;
     background: var(--white) !important;
     border: var(--border) !important;
+    border-radius: var(--radius) !important;
     padding: 15px !important;
     color: var(--fg) !important;
     font-family: var(--font-mono) !important;
@@ -65,6 +71,7 @@ textarea, input[type="text"], input[type="password"] {
 button {
     background: var(--white);
     border: var(--border);
+    border-radius: var(--radius);
     color: var(--fg);
     padding: 15px 30px;
     font-weight: 900;
@@ -93,6 +100,19 @@ button:active {
     box-shadow: none !important;
     font-size: 1.2rem !important;
     padding: 10px !important;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.icon-btn:hover {
+    transform: scale(1.2);
+}
+
+.cipher-btns, .json-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
 }
 
 .hud-stats-grid {
@@ -128,6 +148,7 @@ button:active {
     height: 15px;
     background: var(--cream);
     border: var(--border);
+    border-radius: var(--radius);
     margin: 20px 0;
 }
 
@@ -147,6 +168,7 @@ button:active {
 .cyber-console {
     background: var(--fg);
     border: var(--border);
+    border-radius: var(--radius);
     padding: 30px;
     height: 500px;
     display: flex;
@@ -189,6 +211,4 @@ button:active {
     .lab-row { grid-template-columns: 1fr; }
     .full-width-card { grid-column: span 1; }
     .hud-stats-grid { grid-template-columns: 1fr; }
-}
-: 1fr; }
 }

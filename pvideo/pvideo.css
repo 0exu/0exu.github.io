@@ -1,3 +1,7 @@
+:root {
+    --radius: 10px;
+}
+
 /* NEO-BRUTALIST VLOG PAGE */
 
 .pvideo-body .content {
@@ -56,6 +60,7 @@
   transition: transform 0.2s, box-shadow 0.2s;
   display: flex;
   flex-direction: column;
+  border-radius: var(--radius);
 }
 
 .youtube-video-wrapper:hover {
@@ -109,6 +114,7 @@
     font-size: 0.9rem;
     box-shadow: 2px 2px 0px 0px var(--fg);
     transition: all 0.2s;
+    border-radius: var(--radius);
 }
 
 .youtube-sidebar .folder-label:hover {
@@ -158,6 +164,7 @@
     border-color: var(--fg);
     box-shadow: 2px 2px 0px 0px var(--fg);
     transform: translate(-1px, -1px);
+    border-radius: var(--radius);
 }
 
 /* PAGINATION */
