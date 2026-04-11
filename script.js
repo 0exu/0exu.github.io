@@ -51,6 +51,41 @@ function initEntranceAnimations() {
     document.querySelectorAll('.parallax-item').forEach(el => observer.observe(el));
 }
 
+// --- DYNAMIC GREETING ---
+function initDynamicGreeting() {
+    const greetingEl = document.getElementById('greeting-text');
+    if (!greetingEl) return;
+
+    const hour = new Date().getHours();
+    let welcome = "Good Night";
+    if (hour < 12) welcome = "Good Morning";
+    else if (hour < 18) welcome = "Good Afternoon";
+    else welcome = "Good Evening";
+
+    greetingEl.textContent = `${welcome}, Guest.`;
+}
+
+// --- SYSTEM METRICS ---
+function initSystemMetrics() {
+    const cpuBar = document.getElementById('cpu-bar');
+    const cpuVal = document.getElementById('cpu-val');
+    const netBar = document.getElementById('net-bar');
+    const netVal = document.getElementById('net-val');
+
+    if (!cpuBar || !netBar) return;
+
+    setInterval(() => {
+        const cpu = Math.floor(Math.random() * 30) + 20; // 20-50%
+        const net = Math.floor(Math.random() * 500) + 100; // 100-600 KB/s
+        
+        cpuBar.style.width = `${cpu}%`;
+        cpuVal.textContent = `${cpu}%`;
+        
+        netBar.style.width = `${Math.min(100, net/6)}%`;
+        netVal.textContent = `${net} KB/s`;
+    }, 3000);
+}
+
 // --- TERMINAL TYPING ANIMATION ---
 function initTerminalTyping() {
     const terminal = document.getElementById('terminal-log');
@@ -153,6 +188,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initParallax();
     initSplashParallax();
     initEntranceAnimations();
+    initDynamicGreeting();
+    initSystemMetrics();
     initTerminalTyping();
     initMobileMenu();
     initFooterReveal();

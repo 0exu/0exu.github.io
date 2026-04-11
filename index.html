@@ -46,62 +46,54 @@
 
   <div class="content">
     <section class="hero-section parallax-item">
-      <h1>Securing Code,<br/>Engineering Systems.</h1>
-      <p>Senior Cyber Security Researcher and DevOps Engineer. Specializing in automated threat detection, secure infrastructure, and high-performance architectures.</p>
-      
-      <div class="cta-box">
-        <div class="cta-input-group">
-          <input type="text" class="cta-input" placeholder="Search my codebase... (e.g. Next.js, React)" />
-          <button class="cta-btn">Search</button>
-        </div>
-        <div class="example-tags">
-          <button class="tag-btn">Next.js</button>
-          <button class="tag-btn">Security</button>
-          <button class="tag-btn">React</button>
-          <button class="tag-btn">DevOps</button>
-          <button class="tag-btn">Linux</button>
-        </div>
-      </div>
+      <h1 id="greeting-text">Initializing...</h1>
+      <p id="welcome-subtext">Welcome to the central command of 0warn. Here, security meets automated engineering at the edge of the digital frontier.</p>
     </section>
 
     <main class="bento-grid">
-      <!-- Stats -->
-      <div class="bento-item parallax-item">
-        <h3 class="section-title">PROJECTS</h3>
-        <p class="stat-value">28+</p>
-      </div>
-
-      <div class="bento-item parallax-item">
-        <h3 class="section-title">CORE</h3>
-        <p style="font-size: 1.2rem; font-weight: 700;">DevSecOps (DSO)</p>
-      </div>
-
-      <div class="bento-item parallax-item">
-        <h3 class="section-title">STATUS</h3>
-        <p style="color: var(--primary); font-weight: 900; font-size: 1.5rem;">ENCRYPTED</p>
-      </div>
-
-      <div class="bento-item parallax-item">
-        <h3 class="section-title">ACCESS IP</h3>
-        <p id="ip" style="font-family: var(--font-mono); font-weight: 700;">FETCHING...</p>
-      </div>
-
-      <!-- About -->
-      <div class="bento-item item-wide about-panel parallax-item">
-        <h3 class="section-title">SYSTEM PROFILE</h3>
-        <p>I architect secure automation pipelines and conduct deep security audits. My workflow heavily integrates GitLab CI/CD, Go, and Python to build resilient backends and comprehensive testing frameworks.</p>
-      </div>
-
-      <!-- Workflow -->
+      <!-- Live Monitoring -->
       <div class="bento-item item-wide parallax-item">
-        <h3 class="section-title">WORKFLOW & TOOLS</h3>
-        <div class="skills-grid">
-          <div class="skill-tile">GitLab CI</div>
-          <div class="skill-tile">Docker</div>
-          <div class="skill-tile">Linux</div>
-          <div class="skill-tile">PenTest</div>
-          <div class="skill-tile">Python</div>
-          <div class="skill-tile">Go</div>
+        <h3 class="section-title"><i class="fas fa-chart-line"></i> LIVE MONITORING</h3>
+        <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 10px;">
+            <div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 900; margin-bottom: 5px;">
+                    <span>CPU_LOAD</span> <span id="cpu-val">42%</span>
+                </div>
+                <div style="height: 10px; background: var(--cream); border: 2px solid var(--fg); border-radius: 5px; overflow: hidden;">
+                    <div id="cpu-bar" style="width: 42%; height: 100%; background: var(--primary); transition: width 0.5s;"></div>
+                </div>
+            </div>
+            <div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 900; margin-bottom: 5px;">
+                    <span>NETWORK_TRAFFIC</span> <span id="net-val">89 KB/s</span>
+                </div>
+                <div style="height: 10px; background: var(--cream); border: 2px solid var(--fg); border-radius: 5px; overflow: hidden;">
+                    <div id="net-bar" style="width: 65%; height: 100%; background: var(--secondary); transition: width 0.5s;"></div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <!-- Mission Control (Consolidated) -->
+      <div class="bento-item item-wide parallax-item">
+        <h3 class="section-title"><i class="fas fa-bolt"></i> MISSION CONTROL</h3>
+        
+        <div style="display: flex; gap: 20px; margin-bottom: 20px; padding: 15px; background: var(--cream); border: var(--border); border-radius: var(--radius); box-shadow: inset 4px 4px 0px 0px rgba(0,0,0,0.05);">
+            <div style="flex: 1; text-align: center;">
+                <span style="font-size: 0.7rem; font-weight: 900; display: block; margin-bottom: 5px; opacity: 0.6;">SYSTEM_STATUS</span>
+                <b style="color: var(--primary); font-size: 1.1rem; text-transform: uppercase;">SECURE</b>
+            </div>
+            <div style="width: 2px; background: var(--fg); opacity: 0.1;"></div>
+            <div style="flex: 1; text-align: center;">
+                <span style="font-size: 0.7rem; font-weight: 900; display: block; margin-bottom: 5px; opacity: 0.6;">ACCESS_IP</span>
+                <b id="ip" style="font-family: var(--font-mono); font-size: 1rem;">FETCHING...</b>
+            </div>
+        </div>
+
+        <div class="skills-grid" style="grid-template-columns: repeat(3, 1fr); gap: 10px;">
+          <a href="./projects/projects.html" class="skill-tile" style="text-decoration: none; color: inherit; padding: 10px; font-size: 0.8rem;"><i class="fas fa-folder-open"></i> ARCHIVE</a>
+          <a href="./news/news.html" class="skill-tile" style="text-decoration: none; color: inherit; padding: 10px; font-size: 0.8rem;"><i class="fas fa-rss"></i> INTEL</a>
+          <a href="./pvideo/pvideo.html" class="skill-tile" style="text-decoration: none; color: inherit; padding: 10px; font-size: 0.8rem;"><i class="fas fa-play"></i> STREAM</a>
         </div>
       </div>
 
@@ -112,16 +104,7 @@
             <p>> root@0warn:~# _</p>
         </div>
       </div>
-
-      <!-- Contact -->
-      <div class="bento-item item-wide parallax-item">
-        <h3 class="section-title">CONTACT</h3>
-        <div style="display: flex; flex-direction: column; gap: 15px;">
-            <input type="email" placeholder="ENCRYPTED_EMAIL" style="padding: 15px; border: var(--border); box-shadow: 4px 4px 0px 0px var(--fg);">
-            <textarea placeholder="SECURE_MESSAGE" rows="3" style="padding: 15px; border: var(--border); box-shadow: 4px 4px 0px 0px var(--fg);"></textarea>
-            <button class="cta-btn" style="padding: 15px;">TRANSMIT</button>
-        </div>
-      </div>
+    </main>
     </main>
 
     <footer>
