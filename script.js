@@ -185,8 +185,16 @@ function initFooterReveal() {
     }, { passive: true });
 }
 
+// --- SECURITY: DISABLE RIGHT CLICK ---
+function initSecurity() {
+    document.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+    }, false);
+}
+
 // --- INITIALIZATION ---
 document.addEventListener('DOMContentLoaded', () => {
+    initSecurity();
     initParallax();
     initSplashParallax();
     initEntranceAnimations();

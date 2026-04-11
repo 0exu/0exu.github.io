@@ -400,19 +400,45 @@ footer.visible {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
+        top: 80px;
+        left: 15px;
+        right: 15px;
+        width: calc(100% - 30px);
         background: var(--white);
-        border-bottom: var(--border);
-        padding: 20px;
-        gap: 10px;
+        border: var(--border);
+        border-radius: var(--radius);
+        padding: 25px;
+        gap: 15px;
         z-index: 1001;
         box-shadow: var(--shadow);
     }
 
     nav.active {
         display: flex;
+    }
+
+    nav a {
+        width: 100%;
+        background: var(--cream);
+        border: var(--border);
+        border-radius: var(--radius);
+        padding: 12px 20px;
+        box-shadow: 4px 4px 0px 0px var(--fg);
+        display: flex;
+        align-items: center;
+        transition: all 0.2s;
+    }
+
+    nav a:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 6px 6px 0px 0px var(--fg);
+        background: var(--white);
+    }
+
+    nav a.active {
+        background: var(--primary);
+        color: var(--white);
+        text-decoration: none;
     }
 
     .menu-toggle {
@@ -511,5 +537,3 @@ footer.visible {
 .bento-grid .parallax-item:nth-child(6) { transition-delay: 0.6s; }
 .bento-grid .parallax-item:nth-child(7) { transition-delay: 0.7s; }
 .bento-grid .parallax-item:nth-child(8) { transition-delay: 0.8s; }
-;
-}
