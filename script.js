@@ -58,9 +58,11 @@ function initDynamicGreeting() {
 
     const hour = new Date().getHours();
     let welcome = "Good Night";
-    if (hour < 12) welcome = "Good Morning";
-    else if (hour < 18) welcome = "Good Afternoon";
-    else welcome = "Good Evening";
+    
+    if (hour >= 5 && hour < 12) welcome = "Good Morning";
+    else if (hour >= 12 && hour < 17) welcome = "Good Afternoon";
+    else if (hour >= 17 && hour < 21) welcome = "Good Evening";
+    else welcome = "Good Night";
 
     greetingEl.textContent = `${welcome}, Guest.`;
 }
