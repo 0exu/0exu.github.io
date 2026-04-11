@@ -78,7 +78,6 @@
     font-size: 0.75rem;
     border-radius: var(--radius);
     position: relative;
-    overflow: hidden;
 }
 
 .pin-content {
@@ -118,15 +117,16 @@
 
 .pin-menu-dropdown {
     position: absolute;
-    top: 100%;
+    top: 30px;
     right: 0;
     background: var(--white);
     border: var(--border);
-    box-shadow: 4px 4px 0px 0px var(--fg);
+    box-shadow: 8px 8px 0px 0px var(--fg);
     border-radius: var(--radius);
     padding: 5px;
     display: none;
-    min-width: 100px;
+    min-width: 120px;
+    z-index: 500;
 }
 
 .pin-menu-dropdown.active { display: block; }

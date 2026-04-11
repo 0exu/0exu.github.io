@@ -141,9 +141,11 @@ window.savePin = function() {
 
 window.deletePin = function(index, e) {
     if(e) e.stopPropagation();
-    pins.splice(index, 1);
-    localStorage.setItem('0warn_pins', JSON.stringify(pins));
-    loadPins();
+    if (confirm("Are you sure you want to remove this pin?")) {
+        pins.splice(index, 1);
+        localStorage.setItem('0warn_pins', JSON.stringify(pins));
+        loadPins();
+    }
 };
 
 window.togglePinMenu = function(e, btn) {
