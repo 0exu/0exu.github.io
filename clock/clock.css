@@ -2,19 +2,19 @@
     --radius: 10px;
 }
 
-/* NEO-BRUTALIST CLOCK PAGE - FIXED DASHBOARD LAYOUT */
+/* NEO-BRUTALIST CLOCK PAGE - RESTORED DASHBOARD */
 
 .clock-body {
     background-color: var(--bg);
     color: var(--fg);
     height: 100vh;
-    overflow: hidden; /* Prevent scrolling on large screens */
+    overflow: hidden;
 }
 
 .clock-body .content {
     max-width: 100%;
     height: 100%;
-    padding: 80px 0 0 0; /* Only top padding for header */
+    padding: 80px 0 0 0;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -29,7 +29,7 @@
     position: relative;
 }
 
-/* SIDEBARS - FIXED ON SIDES */
+/* SIDEBARS - RESTORED */
 .pinned-vault {
     width: 240px;
     background: var(--white);
@@ -44,11 +44,17 @@
 }
 
 .left-side {
+    position: fixed;
     left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .right-side {
+    position: fixed;
     right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .vault-grid {
@@ -84,10 +90,7 @@
     cursor: pointer;
 }
 
-.pin-content img {
-    width: 20px;
-    height: 20px;
-}
+.pin-content img { width: 20px; height: 20px; }
 
 /* 3-DOT MENU STYLES */
 .pin-menu-wrapper {
@@ -99,9 +102,7 @@
     transition: opacity 0.2s;
 }
 
-.pin-slot:hover .pin-menu-wrapper {
-    opacity: 1;
-}
+.pin-slot:hover .pin-menu-wrapper { opacity: 1; }
 
 .pin-menu-trigger {
     background: transparent;
@@ -128,9 +129,7 @@
     min-width: 100px;
 }
 
-.pin-menu-dropdown.active {
-    display: block;
-}
+.pin-menu-dropdown.active { display: block; }
 
 .pin-menu-dropdown button {
     width: 100%;
@@ -150,9 +149,7 @@
     transition: background 0.2s;
 }
 
-.pin-menu-dropdown button:hover {
-    background: var(--cream);
-}
+.pin-menu-dropdown button:hover { background: var(--cream); }
 
 .pin-slot:hover {
     transform: translate(-2px, -2px);
@@ -181,12 +178,25 @@
 
 .digital-chronos-box {
     background: var(--white);
-    border: var(--border);
+    border: 4px solid transparent;
     padding: 50px;
     text-align: center;
     box-shadow: var(--shadow);
     width: 100%;
     border-radius: var(--radius);
+    position: relative;
+    background-clip: padding-box;
+}
+
+.digital-chronos-box::before {
+    content: '';
+    position: absolute;
+    top: -4px; bottom: -4px; left: -4px; right: -4px;
+    background: linear-gradient(90deg, #ff0000, #00ff00, #0000ff, #ffff00, #ff00ff, #ff0000);
+    background-size: 400% 100%;
+    z-index: -1;
+    border-radius: calc(var(--radius) + 2px);
+    animation: border-sparkle 4s linear infinite;
 }
 
 #display-time { 
@@ -272,7 +282,6 @@
     background-clip: padding-box;
 }
 
-/* ANIMATED GRADIENT BORDER (SPARKLE) */
 .search-form-core::before {
     content: '';
     position: absolute;
@@ -357,78 +366,27 @@
 }
 
 .modal-actions {
-    display: flex;
-    gap: 20px;
-    margin-top: 10px;
+    display: flex; gap: 20px; margin-top: 10px;
 }
 
 .modal-actions button {
-    flex: 1;
-    padding: 15px;
-    border: var(--border);
-    font-weight: 900;
-    cursor: pointer;
-    box-shadow: 4px 4px 0px 0px var(--fg);
-    transition: all 0.2s;
-    border-radius: var(--radius);
-    text-transform: uppercase;
-    font-size: 0.9rem;
+    flex: 1; padding: 15px; border: var(--border); font-weight: 900;
+    cursor: pointer; box-shadow: 4px 4px 0px 0px var(--fg);
+    transition: all 0.2s; border-radius: var(--radius);
+    text-transform: uppercase; font-size: 0.9rem;
 }
 
 .btn-confirm { background: var(--primary); color: var(--white); }
 .btn-void { background: var(--cream); color: var(--fg); }
 
-.modal-actions button:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 6px 6px 0px 0px var(--fg);
-}
-
-.modal-actions button:active {
-    transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0px 0px var(--fg);
-}
-
-/* RESPONSIVE MANAGEMENT */
+/* RESPONSIVE */
 @media (max-width: 1400px) {
     .clock-body { height: auto; overflow: auto; }
-    .clock-body .content { padding-bottom: 40px; }
-    .pinned-vault {
-        display: none; /* HIDE PIN TABS ON SMALL/MEDIUM SCREENS */
-    }
-    .chronos-viewport {
-        flex-direction: column;
-        padding: 20px;
-        min-height: 0;
-    }
-    .search-terminal-container {
-        position: relative;
-        bottom: 0;
-        left: 0;
-        transform: none;
-        margin: 40px auto;
-        padding: 0 20px;
-    }
+    .pinned-vault { display: none; }
+    .chronos-viewport { flex-direction: column; padding: 20px; }
+    .search-terminal-container { position: relative; bottom: 0; left: 0; transform: none; margin: 40px auto; padding: 0 20px; }
 }
 
 @media (max-width: 900px) {
     #display-time { font-size: 4rem; padding: 20px; }
-    .digital-chronos-box { padding: 30px 20px; }
-}
-
-@media (max-width: 600px) {
-    .engine-pill {
-        width: 45px;
-        height: 45px;
-        font-size: 1rem;
-    }
-    .search-form-core input {
-        font-size: 1rem;
-        padding: 10px;
-    }
-    .modal-window {
-        padding: 30px 20px;
-    }
-    .modal-window h3 {
-        font-size: 1.5rem;
-    }
 }

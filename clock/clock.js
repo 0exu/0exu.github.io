@@ -29,12 +29,6 @@ document.addEventListener('keydown', (e) => {
         const searchInput = document.getElementById('search-input');
         if (searchInput) {
             searchInput.focus();
-            // Visual feedback - temporary glow
-            const wrapper = document.querySelector('.animated-border-wrap');
-            if (wrapper) {
-                wrapper.style.boxShadow = '0 0 30px rgba(0, 247, 255, 0.4)';
-                setTimeout(() => wrapper.style.boxShadow = '', 500);
-            }
         }
     }
 });
@@ -54,7 +48,10 @@ function setEngine(engine, btn) {
     currentEngine = engine;
     document.querySelectorAll('.engine-pill').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    document.getElementById('search-input').placeholder = `Querying ${engine.charAt(0).toUpperCase() + engine.slice(1)}...`;
+    const input = document.getElementById('search-input');
+    if (input) {
+        input.placeholder = `Querying ${engine.charAt(0).toUpperCase() + engine.slice(1)}...`;
+    }
 }
 
 function handleSearch(e) {
@@ -68,15 +65,13 @@ function handleSearch(e) {
     return false;
 }
 
-// --- PINNED VAULT FIXED ---
+// --- PINNED VAULT ---
 let pins = JSON.parse(localStorage.getItem('0warn_pins')) || [];
 
 function loadPins() {
     const leftGrid = document.getElementById('pinned-grid-left');
     const rightGrid = document.getElementById('pinned-grid-right');
-    const mobileGrid = document.getElementById('pinned-grid-mobile');
-    const isSmallScreen = window.innerWidth <= 1100;
-    const pinCount = isSmallScreen ? 15 : 16;
+    const pinCount = 16; // 8x2 grid
 
     const render = (container, startIdx, count) => {
         if (!container) return;
@@ -107,38 +102,26 @@ function loadPins() {
             } else {
                 slot.className = 'pin-slot empty';
                 slot.innerHTML = `<i class="fas fa-plus" style="opacity:0.2"></i>`;
-                slot.onclick = openPinModal; // WHOLE SLOT IS CLICKABLE
+                slot.onclick = openPinModal;
             }
             container.appendChild(slot);
         }
     };
 
     render(leftGrid, 0, pinCount);
-    if (!isSmallScreen) {
-        render(rightGrid, 16, pinCount);
-    } else if (rightGrid) {
-        rightGrid.innerHTML = ''; // Ensure right grid is empty on small screens
-    }
-    render(mobileGrid, 0, 15);
+    render(rightGrid, 16, pinCount);
 }
-
-// Add event listener for resize to re-render pins
-window.addEventListener('resize', loadPins);
 
 window.openPinModal = function() {
     const modal = document.getElementById('pin-modal');
-    modal.style.display = 'flex';
-    setTimeout(() => modal.classList.add('active'), 10);
+    if (modal) modal.style.display = 'flex';
 };
 
 window.closePinModal = function() {
     const modal = document.getElementById('pin-modal');
-    modal.classList.remove('active');
-    setTimeout(() => {
-        modal.style.display = 'none';
-        document.getElementById('pin-title').value = '';
-        document.getElementById('pin-url').value = '';
-    }, 300);
+    if (modal) modal.style.display = 'none';
+    document.getElementById('pin-title').value = '';
+    document.getElementById('pin-url').value = '';
 };
 
 window.savePin = function() {
@@ -167,16 +150,10 @@ window.togglePinMenu = function(e, btn) {
     if(e) e.stopPropagation();
     const dropdown = btn.nextElementSibling;
     const isActive = dropdown.classList.contains('active');
-    
-    // Close all open menus first
     document.querySelectorAll('.pin-menu-dropdown').forEach(d => d.classList.remove('active'));
-    
-    if (!isActive) {
-        dropdown.classList.add('active');
-    }
+    if (!isActive) dropdown.classList.add('active');
 };
 
-// Close menus when clicking anywhere else
 document.addEventListener('click', () => {
     document.querySelectorAll('.pin-menu-dropdown').forEach(d => d.classList.remove('active'));
 });
