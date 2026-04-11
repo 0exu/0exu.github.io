@@ -175,6 +175,7 @@
     border: var(--border); 
     color: var(--fg); 
     cursor: pointer; 
+    border-radius: var(--radius);
     box-shadow: 4px 4px 0px 0px var(--fg); 
     display: flex; 
     align-items: center; 

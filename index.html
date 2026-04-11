@@ -10,6 +10,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
 <body>
+  <!-- Centered Splash Logo -->
+  <div class="splash-section">
+    <div class="splash-logo">
+      <img src="./back/log.png" alt="0warn Logo">
+    </div>
+    <div class="scroll-hint">SCROLL TO ENTER</div>
+  </div>
+
   <!-- Parallax Background Layers -->
   <div class="parallax-container">
     <div class="parallax-shape shape-star-pink" data-speed="0.2"></div>
@@ -37,7 +45,7 @@
   </header>
 
   <div class="content">
-    <section class="hero-section">
+    <section class="hero-section parallax-item">
       <h1>Securing Code,<br/>Engineering Systems.</h1>
       <p>Senior Cyber Security Researcher and DevOps Engineer. Specializing in automated threat detection, secure infrastructure, and high-performance architectures.</p>
       
@@ -58,34 +66,34 @@
 
     <main class="bento-grid">
       <!-- Stats -->
-      <div class="bento-item">
+      <div class="bento-item parallax-item">
         <h3 class="section-title">PROJECTS</h3>
         <p class="stat-value">28+</p>
       </div>
 
-      <div class="bento-item">
+      <div class="bento-item parallax-item">
         <h3 class="section-title">CORE</h3>
         <p style="font-size: 1.2rem; font-weight: 700;">DevSecOps (DSO)</p>
       </div>
 
-      <div class="bento-item">
+      <div class="bento-item parallax-item">
         <h3 class="section-title">STATUS</h3>
         <p style="color: var(--primary); font-weight: 900; font-size: 1.5rem;">ENCRYPTED</p>
       </div>
 
-      <div class="bento-item">
+      <div class="bento-item parallax-item">
         <h3 class="section-title">ACCESS IP</h3>
         <p id="ip" style="font-family: var(--font-mono); font-weight: 700;">FETCHING...</p>
       </div>
 
       <!-- About -->
-      <div class="bento-item item-wide about-panel">
+      <div class="bento-item item-wide about-panel parallax-item">
         <h3 class="section-title">SYSTEM PROFILE</h3>
         <p>I architect secure automation pipelines and conduct deep security audits. My workflow heavily integrates GitLab CI/CD, Go, and Python to build resilient backends and comprehensive testing frameworks.</p>
       </div>
 
       <!-- Workflow -->
-      <div class="bento-item item-wide">
+      <div class="bento-item item-wide parallax-item">
         <h3 class="section-title">WORKFLOW & TOOLS</h3>
         <div class="skills-grid">
           <div class="skill-tile">GitLab CI</div>
@@ -98,7 +106,7 @@
       </div>
 
       <!-- Terminal -->
-      <div class="bento-item item-wide" style="min-height: 300px;">
+      <div class="bento-item item-wide parallax-item" style="min-height: 300px;">
         <h3 class="section-title">INIT LOG</h3>
         <div class="terminal-text" id="terminal-log">
             <p>> root@0warn:~# _</p>
@@ -106,7 +114,7 @@
       </div>
 
       <!-- Contact -->
-      <div class="bento-item item-wide">
+      <div class="bento-item item-wide parallax-item">
         <h3 class="section-title">CONTACT</h3>
         <div style="display: flex; flex-direction: column; gap: 15px;">
             <input type="email" placeholder="ENCRYPTED_EMAIL" style="padding: 15px; border: var(--border); box-shadow: 4px 4px 0px 0px var(--fg);">

@@ -163,6 +163,7 @@
     text-decoration: none;
     color: var(--fg);
     text-align: center;
+    border-radius: var(--radius);
     box-shadow: 4px 4px 0px 0px var(--fg);
     transition: all 0.2s;
     display: flex;

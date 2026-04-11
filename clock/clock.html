@@ -12,28 +12,27 @@
   <link rel="stylesheet" href="./clock.css">
 </head>
 <body class="clock-body">
- 
-  <div class="content">
-    <header>
-      <h1 class="logo-text">
-        <a href="../"><span>0</span><span>warn</span></a>
-      </h1>
-      <nav id="nav-menu">
-        <a href="../index.html"><i class="fas fa-home"></i> Home</a>
-        <a href="../projects/projects.html"><i class="fas fa-code"></i> Projects</a>
-        <a href="../news/news.html"><i class="fas fa-newspaper"></i> News</a>
-        <a href="../pvideo/pvideo.html"><i class="fas fa-video"></i> Vlog</a>
-        <a href="../funthing/funthing.html"><i class="fas fa-gamepad"></i> Fun</a>
-      </nav>
-      <div style="display: flex; gap: 15px; align-items: center;">
-          <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
-          <a href="../clock/clock.html" class="nav-clock-btn active">
-              <i class="fas fa-clock"></i>
-              <span id="clock">00:00:00</span>
-          </a>
-      </div>
-    </header>
+  <header>
+    <h1 class="logo-text">
+      <a href="../"><span>0</span><span>warn</span></a>
+    </h1>
+    <nav id="nav-menu">
+      <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+      <a href="../projects/projects.html"><i class="fas fa-code"></i> Projects</a>
+      <a href="../news/news.html"><i class="fas fa-newspaper"></i> News</a>
+      <a href="../pvideo/pvideo.html"><i class="fas fa-video"></i> Vlog</a>
+      <a href="../funthing/funthing.html"><i class="fas fa-gamepad"></i> Fun</a>
+    </nav>
+    <div style="display: flex; gap: 15px; align-items: center;">
+        <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
+        <a href="../clock/clock.html" class="nav-clock-btn active">
+            <i class="fas fa-clock"></i>
+            <span id="clock">00:00:00</span>
+        </a>
+    </div>
+  </header>
 
+  <div class="content">
     <div class="chronos-viewport">
       <!-- Left Sidebar -->
       <aside class="pinned-vault left-side">
@@ -84,11 +83,10 @@
           <button onclick="savePin()" class="btn-confirm">SAVE</button>
         </div>
       </div>
-    </div>
+      </div>
 
-  </div>
-  
-  <script src="../script.js"></script>
+      <script src="../script.js"></script>
+
   <script src="./clock.js"></script>
 </body>
 </html>

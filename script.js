@@ -11,6 +11,46 @@ function initParallax() {
     });
 }
 
+// --- SPLASH PARALLAX ---
+function initSplashParallax() {
+    const splash = document.querySelector('.splash-section');
+    const splashLogo = document.querySelector('.splash-logo');
+    if (!splash || !splashLogo) return;
+
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const opacity = 1 - (scrolled / 500);
+        const scale = 1 + (scrolled / 1000);
+        
+        if (scrolled < 600) {
+            splashLogo.style.transform = `scale(${scale})`;
+            splashLogo.style.opacity = opacity;
+            splash.style.pointerEvents = 'auto';
+        } else {
+            splash.style.pointerEvents = 'none';
+        }
+    }, { passive: true });
+}
+
+// --- ENTRANCE ANIMATIONS ---
+function initEntranceAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                observer.unobserve(entry.target); // Only animate once
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.parallax-item').forEach(el => observer.observe(el));
+}
+
 // --- TERMINAL TYPING ANIMATION ---
 function initTerminalTyping() {
     const terminal = document.getElementById('terminal-log');
@@ -111,6 +151,8 @@ function initFooterReveal() {
 // --- INITIALIZATION ---
 document.addEventListener('DOMContentLoaded', () => {
     initParallax();
+    initSplashParallax();
+    initEntranceAnimations();
     initTerminalTyping();
     initMobileMenu();
     initFooterReveal();
