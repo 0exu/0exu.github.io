@@ -36,13 +36,13 @@
     </header>
 
     <div class="main-funthing-container scroll-reveal">
-      <h2 class="section-title">CYBER LAB</h2>
+      <h2 class="section-title">PLAY HERE</h2>
 
       <div class="lab-layout">
         <!-- Prominent Password Checker -->
         <div class="fun-card pass-panel full-width-card">
           <h3>
-            <span>🛡️ VULN_CHECKER</span>
+            <span>🛡️ VULN CHECK</span>
             <button onclick="copyToClipboard('pwd-input', this)" class="icon-btn" title="Copy Password"><i class="fas fa-copy"></i></button>
           </h3>
           <div class="pass-input-group">
@@ -52,7 +52,7 @@
           <div id="pwd-strength-bar"></div>
           <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
               <p id="pwd-feedback" class="result-text" style="font-weight: 900; color: var(--primary);">STRENGTH: --</p>
-              <button onclick="generatePass()" style="width: auto;">GENERATE_SECURE</button>
+              <button onclick="generatePass()" style="width: auto;">GEN SECURE</button>
           </div>
           <div class="pass-info" id="pass-details" style="margin-top: 15px; font-weight: 700; opacity: 0.7;">Enter a password to analyze security level.</div>
         </div>
@@ -61,15 +61,15 @@
           <!-- Cipher Tools -->
           <div class="fun-card crypto-panel">
             <h3>
-              <span>🔐 CIPHER_TOOLS</span>
+              <span>🔐 CIPHER TOOLS</span>
               <button onclick="copyToClipboard('crypto-input', this)" class="icon-btn" title="Copy Output"><i class="fas fa-copy"></i></button>
             </h3>
             <textarea id="crypto-input" placeholder="Enter text to encode/decode..."></textarea>
             <div class="cipher-btns">
-              <button onclick="cipher('b64-enc')">B64_ENC</button>
-              <button onclick="cipher('b64-dec')">B64_DEC</button>
-              <button onclick="cipher('uri-enc')">URL_ENC</button>
-              <button onclick="cipher('uri-dec')">URL_DEC</button>
+              <button onclick="cipher('b64-enc')">B64 ENC</button>
+              <button onclick="cipher('b64-dec')">B64 DEC</button>
+              <button onclick="cipher('uri-enc')">URL ENC</button>
+              <button onclick="cipher('uri-dec')">URL DEC</button>
               <button onclick="cipher('rev')">REVERSE</button>
             </div>
           </div>
@@ -77,7 +77,7 @@
           <!-- JSON Formatter -->
           <div class="fun-card json-panel">
             <h3>
-              <span>📦 JSON_FORMATTER</span>
+              <span>📦 JSON FORMAT</span>
               <button onclick="copyToClipboard('json-input', this)" class="icon-btn" title="Copy JSON"><i class="fas fa-copy"></i></button>
             </h3>
             <textarea id="json-input" placeholder="Paste JSON here..."></textarea>
@@ -91,7 +91,7 @@
         <div class="lab-row">
             <!-- HUD Stats -->
             <div class="fun-card status-panel">
-              <h3>📡 SYSTEM_HUD</h3>
+              <h3>📡 SYSTEM HUD</h3>
               <div class="hud-stats-grid">
                 <div class="stat-box"><span>RESOLUTION</span> <b id="scr-w">--</b></div>
                 <div class="stat-box"><span>LATENCY</span> <b id="ping">--</b></div>
@@ -107,7 +107,7 @@
 
         <!-- Terminal (Full Width) -->
         <div class="fun-card terminal-panel full-width-card">
-          <h3>💻 INTERACTIVE_SHELL</h3>
+          <h3>💻 INTERACTIVE SHELL</h3>
           <div class="cyber-console" id="terminal-body">
             <div class="console-output" id="console-output">
               <p>> root@0warn:~# System online. Type 'help' for commands.</p>
