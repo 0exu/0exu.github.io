@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextButton = document.getElementById('next-button');
 
     const rssUrl = 'https://feeds.feedburner.com/TheHackersNews';
-    const proxyUrl = 'https://api.codetabs.com/v1/proxy/?quest=' + rssUrl;
+    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
 
     const ITEMS_PER_PAGE = 9;
     let currentPage = 0;
@@ -13,40 +13,40 @@ document.addEventListener('DOMContentLoaded', function() {
 
     async function fetchNews() {
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 seconds timeout
+      const timeoutId = setTimeout(() => controller.abort(), 15000); // 15 seconds timeout
 
       try {
-        const response = await fetch(proxyUrl, { signal: controller.signal });
+        const response = await fetch(apiUrl, { signal: controller.signal });
         clearTimeout(timeoutId);
+        
         if (!response.ok) {
-          console.error('News fetch network response not ok:', response.status, response.statusText);
           throw new Error('News fetch network response was not ok');
         }
-        const data = await response.text();
+        
+        const data = await response.json();
 
-        const parser = new DOMParser();
-        const xmlDoc = parser.parseFromString(data, 'text/xml');
+        if (data.status !== 'ok') {
+          throw new Error(data.message || 'Failed to parse news feed');
+        }
 
-        const items = xmlDoc.querySelectorAll('item');
-
-        newsItems = Array.from(items).map(item => ({
-          title: item.querySelector('title').textContent,
-          link: item.querySelector('link').textContent,
-          pubDate: item.querySelector('pubDate').textContent,
-          description: item.querySelector('description').textContent.replace(/<[^>]*>?/gm, ''),
+        newsItems = data.items.map(item => ({
+          title: item.title,
+          link: item.link,
+          pubDate: item.pubDate,
+          description: item.description.replace(/<[^>]*>?/gm, '').replace(/&nbsp;/g, ' '),
         }));
 
         newsList.innerHTML = '';
         renderPage(currentPage);
 
       } catch (error) {
-        clearTimeout(timeoutId); // Clear timeout in case of earlier error
+        clearTimeout(timeoutId);
         if (error.name === 'AbortError') {
             console.error('News fetch timed out:', error);
-            newsList.innerHTML = '<p class="error-message">Cyber news fetch timed out. Please try again.</p>';
+            newsList.innerHTML = '<p class="error-message">Security news fetch timed out. Please try again.</p>';
         } else {
             console.error('Failed to fetch news:', error);
-            newsList.innerHTML = '<p class="error-message">Failed to load cyber news. Please check your internet connection or try again later.</p>';
+            newsList.innerHTML = '<p class="error-message">Failed to load security news. Please try again later.</p>';
         }
       }
     }
@@ -57,6 +57,11 @@ document.addEventListener('DOMContentLoaded', function() {
       const start = page * ITEMS_PER_PAGE;
       const end = start + ITEMS_PER_PAGE;
       const pageItems = newsItems.slice(start, end);
+
+      if (pageItems.length === 0 && newsItems.length > 0) {
+          newsList.innerHTML = '<p class="error-message">No news items found for this page.</p>';
+          return;
+      }
 
       pageItems.forEach(item => {
         const card = document.createElement('div');
@@ -94,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', e => {
           e.preventDefault();
           const clickedItem = newsItems.find(n => n.link === e.target.href);
-          openModal(clickedItem);
+          if (clickedItem) openModal(clickedItem);
         });
       });
 
@@ -122,16 +127,21 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('news-modal').style.display = 'flex';
     }
 
-    document.getElementById('modal-close').addEventListener('click', () => {
-      document.getElementById('news-modal').style.display = 'none';
-    });
+    const modalClose = document.getElementById('modal-close');
+    if (modalClose) {
+        modalClose.addEventListener('click', () => {
+            document.getElementById('news-modal').style.display = 'none';
+        });
+    }
 
-    document.getElementById('news-modal').addEventListener('click', e => {
-      if (e.target.id === 'news-modal') {
-        document.getElementById('news-modal').style.display = 'none';
-      }
-    });
-
+    const newsModal = document.getElementById('news-modal');
+    if (newsModal) {
+        newsModal.addEventListener('click', e => {
+          if (e.target.id === 'news-modal') {
+            newsModal.style.display = 'none';
+          }
+        });
+    }
 
     prevButton.addEventListener('click', () => {
       if (currentPage > 0) {
@@ -147,6 +157,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
-    newsList.innerHTML = '<p class="loading-message">Loading cyber news...</p>';
+    newsList.innerHTML = '<p class="loading-message">Loading security insights...</p>';
     fetchNews();
 });
