@@ -1,7 +1,7 @@
 [
   {
     "type": "folder",
-    "name": "Web Security Research",
+    "name": "File Security Research",
     "children": [
       {"type": "file", "id": "uvP6VR5Ocak", "title": "01 - Understanding File Upload Security"},
       {"type": "file", "id": "mj2RK0DGVFE", "title": "02 - Security Restriction Analysis"},
