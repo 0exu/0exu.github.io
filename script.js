@@ -77,15 +77,15 @@ function initSystemMetrics() {
     if (!cpuBar || !netBar) return;
 
     setInterval(() => {
-        const cpu = Math.floor(Math.random() * 30) + 20; // 20-50%
-        const net = Math.floor(Math.random() * 500) + 100; // 100-600 KB/s
+        const load = Math.floor(Math.random() * 20) + 10; // 10-30%
+        const sync = Math.floor(Math.random() * 400) + 100; // 100-500 ms
         
-        cpuBar.style.width = `${cpu}%`;
-        cpuVal.textContent = `${cpu}%`;
+        cpuBar.style.width = `${load}%`;
+        cpuVal.textContent = `${load}%`;
         
-        netBar.style.width = `${Math.min(100, net/6)}%`;
-        netVal.textContent = `${net} KB/s`;
-    }, 3000);
+        netBar.style.width = `${Math.min(100, sync/5)}%`;
+        netVal.textContent = `${sync} ms`;
+    }, 5000); // Slower updates
 }
 
 // --- TERMINAL TYPING ANIMATION ---
@@ -94,12 +94,11 @@ function initTerminalTyping() {
     if (!terminal) return;
     
     const lines = [
-        "> Initializing kernel...",
-        "> Loading security modules...",
-        "> Establishing encrypted tunnel...",
-        "> Network: SECURE",
-        "> Firewall: ACTIVE",
-        "> root@0warn:~# _"
+        "> Loading portfolio data...",
+        "> Fetching project modules...",
+        "> Initializing interface...",
+        "> Status: READY",
+        "> welcome@0warn:~# _"
     ];
     
     let lineIdx = 0;
@@ -185,16 +184,8 @@ function initFooterReveal() {
     }, { passive: true });
 }
 
-// --- SECURITY: DISABLE RIGHT CLICK ---
-function initSecurity() {
-    document.addEventListener('contextmenu', (e) => {
-        e.preventDefault();
-    }, false);
-}
-
 // --- INITIALIZATION ---
 document.addEventListener('DOMContentLoaded', () => {
-    initSecurity();
     initParallax();
     initSplashParallax();
     initEntranceAnimations();

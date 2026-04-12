@@ -17,7 +17,7 @@ const tools = [
   {
     name: "mahakal",
     img: "../back/bash.png",
-    desc: "Comprehensive penetration testing framework for various attack vectors with post exploitation and recon phases.",
+    desc: "Comprehensive security auditing framework for various environments with post-audit analysis and reconnaissance phases.",
     category: "bash",
     gitlab: true,
   },
@@ -38,7 +38,7 @@ const tools = [
   {
     name: "crck",
     img: "https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg",
-    desc: "Multi-threaded cryptographic hash identification & hash cracker tool.",
+    desc: "Multi-threaded cryptographic hash identification & recovery tool.",
     category: "python",
     gitlab: true,
   },
@@ -66,7 +66,7 @@ const tools = [
   {
     name: "dirfuzz",
     img: "https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg",
-    desc: "High-speed web directory and file discovery tool using dictionary attacks.",
+    desc: "High-speed web directory and file discovery tool using dictionary-based checks.",
     category: "python",
     gitlab: true,
   },

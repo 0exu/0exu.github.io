@@ -82,8 +82,8 @@
                 print("SYS  : neofetch, clear, uptime, date, uname, whoami, exit");
                 print("NET  : ping, ip, nmap, nslookup, traffic, wifi, traceroute");
                 print("FILE : ls, cd, cat, pwd, mkdir, rm, touch");
-                print("CYBER: scan, hack, decrypt, firewall, ssh, overload, ddos");
-                print("FUN  : matrix, joke, fortune, quote, weather, secret");
+                print("CYBER: scan, decrypt, firewall, ssh, monitor, stats");
+                print("FUN  : matrix, joke, fortune, quote, weather");
                 print("UTIL : history, json, base64, crypto, social, calc");
                 break;
 
@@ -126,20 +126,20 @@
                 for(let i=1; i<=4; i++) print(`64 bytes from ${args[0] || '127.0.0.1'}: icmp_seq=${i} ttl=64 time=${(Math.random()*2).toFixed(3)} ms`, "#00ffaa", i*300);
                 break;
 
-            case 'hack':
-                print("INITIATING EXPLOIT SEQUENCE...", "#f00");
-                print("[####------] 40% - INJECTING PAYLOAD", "#f00", 500);
-                print("[########--] 80% - BYPASSING KERNEL", "#f00", 1000);
-                print("[##########] 100% - ACCESS_GRANTED", "#0f0", 1500);
+            case 'scan':
+                print("INITIATING SYSTEM AUDIT...", "#0ff");
+                print("[####------] 40% - ANALYZING ASSETS", "#0ff", 500);
+                print("[########--] 80% - CHECKING CONFIGURATION", "#0ff", 1000);
+                print("[##########] 100% - AUDIT_COMPLETE", "#0f0", 1500);
                 break;
 
             case 'decrypt':
-                print("SEARCHING FOR CIPHER KEYS...", "#ff0");
-                setTimeout(() => print("DECRYPTED_VAL: 'Keep Securing the Future'", "#0f0"), 1000);
+                print("PROCESSING ENCRYPTED DATA...", "#ff0");
+                setTimeout(() => print("RESULT: 'Keep Securing the Future'", "#0f0"), 1000);
                 break;
 
             case 'matrix':
-                print("SYSTEM OVERRIDE DETECTED", "#0f0");
+                print("VISUALIZING DATA STREAM", "#0f0");
                 for(let i=0; i<10; i++) print("010110101100101011010101101010110101", "#0f0", i*100);
                 break;
 
@@ -159,7 +159,11 @@
                 break;
 
             case 'calc':
-                try { print(`${args.join(' ')} = ${eval(args.join(' '))}`, "#fff"); }
+                try { 
+                    const expr = args.join(' ');
+                    const result = new Function(`return ${expr.replace(/[^0-9+\-*/(). ]/g, '')}`)();
+                    print(`${expr} = ${result}`, "#fff"); 
+                }
                 catch(e) { print("err: invalid expression", "#f44"); }
                 break;
 
@@ -217,7 +221,7 @@
             if (!v) { b.className = ''; f.innerText = 'Strength: --'; return; }
             let s = 0; if (v.length > 8) s++; if (/[A-Z]/.test(v) && /[0-9]/.test(v)) s++; if (/[^A-Za-z0-9]/.test(v)) s++;
             b.className = (s <= 1) ? 'weak' : (s === 2) ? 'medium' : 'strong';
-            f.innerText = (s <= 1) ? 'VULNERABLE' : (s === 2) ? 'MODERATE' : 'SECURE';
+            f.innerText = (s <= 1) ? 'BASIC' : (s === 2) ? 'AVERAGE' : 'ROBUST';
         });
     }
 
