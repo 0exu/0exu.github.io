@@ -8,6 +8,13 @@ const tools = [
     gitlab: true,
   },
   {
+    name: "pautopsy",
+    img: "https://upload.wikimedia.org/wikipedia/commons/0/0a/Python.svg",
+    desc: "This is an implementation of autopsy in python wrapper that's why it's name i put pautopsy. But the thing is, it's backend is sleuthkit, so, it is just a skin for autopsy gui (java version) for stability & versatile use in daily forensic.",
+    category: "python",
+    gitlab: true,
+  },
+  {
     name: "harekrishna",
     img: "../back/bash.png",
     desc: "Secure your network with tor anonymity and mac number randomizer.",
@@ -161,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Rendering tools, primary repository text should be gone.");
     if (!grid) return;
     grid.innerHTML = "";
-    
+
     const filtered = tools.filter((t) => {
       // Search Filter
       const matchesSearch =
