@@ -1,15 +1,15 @@
 [
   {
-    "type": "folder",
-    "name": "Greeting",
     "children": [
       {
-        "type": "file",
-        "title": "Hello $USER",
-        "filename": "hello--user.md",
         "date": "2026-05-04",
-        "status": "published"
+        "filename": "hello--user.md",
+        "status": "published",
+        "title": "Hello $USER",
+        "type": "file"
       }
-    ]
+    ],
+    "name": "Greeting",
+    "type": "folder"
   }
 ]

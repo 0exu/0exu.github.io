@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
             blogModal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
             
-            document.querySelector('.modal-content').scrollTop = 0;
+            document.querySelector('.modal-body').scrollTop = 0;
         } catch (error) {
             console.error('Failed to load blog post:', error);
             alert('Failed to load post content.');
