@@ -139,7 +139,18 @@ async function renderVideoPage(page) {
     videoWrapper.id = `youtube-video-${video.id}`;
     
     const iframe = document.createElement('iframe');
-    iframe.src = `https://www.youtube.com/embed/${video.id}`;
+    
+    // Support multiple platforms
+    let embedUrl = "";
+    if (video.platform === 'odysee') {
+        // Odysee embed format: https://odysee.com/$/embed/id
+        embedUrl = `https://odysee.com/$/embed/${video.id}`;
+    } else {
+        // Default to YouTube
+        embedUrl = `https://www.youtube.com/embed/${video.id}`;
+    }
+
+    iframe.src = embedUrl;
     iframe.title = video.title;
     iframe.frameBorder = '0';
     iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
