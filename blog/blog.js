@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 folderLabel.addEventListener('click', (e) => {
                     e.stopPropagation();
                     listItem.classList.toggle('expanded');
+                    childList.classList.toggle('expanded');
                 });
 
             } else if (node.type === 'file' && node.status === 'published') {

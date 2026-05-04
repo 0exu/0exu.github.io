@@ -8,7 +8,7 @@
         "title": "Hello $USER",
         "filename": "hello--user.md",
         "date": "2026-05-04",
-        "status": "draft"
+        "status": "published"
       }
     ]
   }
