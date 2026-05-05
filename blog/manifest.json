@@ -7,6 +7,13 @@
         "status": "published",
         "title": "Hello $USER",
         "type": "file"
+      },
+      {
+        "type": "file",
+        "title": "checklist for cyber security roles",
+        "filename": "checklist-for-cyber-security-roles.md",
+        "date": "2026-05-05",
+        "status": "published"
       }
     ],
     "name": "Greeting",
