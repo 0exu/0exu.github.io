@@ -3,16 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>0warn - Power Vault</title>
+  <title>0warn - Pentest Checklist</title>
   <link rel="stylesheet" href="../home.css">
   <link rel="icon" sizes="70x70" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/OMSWASTRA_WITHOUT_BACKGORUND_2.png/250px-OMSWASTRA_WITHOUT_BACKGORUND_2.png" type="image/png">
-  <link rel="apple-touch-icon" sizes="70x70" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/OMSWASTRA_WITHOUT_BACKGORUND_2.png/250px-OMSWASTRA_WITHOUT_BACKGORUND_2.png"> 
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;700;900&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="./projects.css">
+  
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    #checklist-root {
+        min-height: 100vh;
+    }
+  </style>
 </head>
-<body class="projects-body">
- 
+<body>
+  <!-- Parallax Background Layers -->
+  <div class="parallax-container">
+    <div class="parallax-shape shape-star-pink" data-speed="0.2"></div>
+    <div class="parallax-shape shape-star-green" data-speed="0.5"></div>
+  </div>
+
   <div class="content">
     <header>
       <h1 class="logo-text">
@@ -20,12 +32,12 @@
       </h1>
       <nav id="nav-menu">
         <a href="../"><i class="fas fa-home"></i> Home</a>
-        <a href="../projects/" class="active"><i class="fas fa-code"></i> Projects</a>
+        <a href="../projects/"><i class="fas fa-code"></i> Projects</a>
         <a href="../news/"><i class="fas fa-newspaper"></i> News</a>
         <a href="../blog/"><i class="fas fa-terminal"></i> Blog</a>
         <a href="../pvideo/"><i class="fas fa-video"></i> Vlog</a>
         <a href="../funthing/"><i class="fas fa-gamepad"></i> Fun</a>
-        <a href="../chkist/"><i class="fas fa-check-double"></i> Checklist</a>
+        <a href="./" class="active"><i class="fas fa-check-double"></i> Checklist</a>
       </nav>
       <div style="display: flex; gap: 15px; align-items: center;">
           <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
@@ -36,28 +48,7 @@
       </div>
     </header>
 
-    <div class="power-container">
-      <!-- CONTROL CENTER -->
-      <div class="terminal-controls">
-        <div class="search-row">
-          <div class="search-wrap">
-            <i class="fas fa-terminal"></i>
-            <input type="text" id="project-search" placeholder="Search resources... ( Press '/' to focus )" autocomplete="off">
-          </div>
-          <button class="gitlab-toggle-badge" id="gitlab-filter" title="View GitLab Profile">
-            <i class="fab fa-gitlab"></i> GITLAB
-          </button>
-        </div>
-        
-        <div class="vault-meta">
-          <span>NODES: <b id="node-count">0</b></span>
-          <span>PORTFOLIO: <b>STABLE</b></span>
-        </div>
-      </div>
-
-      <!-- DATA GRID -->
-      <div class="power-grid" id="tools-grid"></div>
-    </div>
+    <div id="checklist-root"></div>
     
     <footer>
       &copy; 2026 0warn | SECURING THE FUTURE | RESEARCH PORTFOLIO (NO DATA COLLECTED)
@@ -65,6 +56,12 @@
   </div>
   
   <script src="../script.js"></script>
-  <script src="./projects.js"></script>
+  <script type="text/babel" data-presets="react" src="./pentest-checklist.jsx"></script>
+  <script type="text/babel" data-presets="react">
+    // Wait for the component to be available
+    // Since we are using src for the JSX, we might need to handle the export
+    // But Babel standalone with src doesn't export to global easily.
+    // I'll modify the JSX to be a bit more global-friendly for this environment.
+  </script>
 </body>
 </html>
