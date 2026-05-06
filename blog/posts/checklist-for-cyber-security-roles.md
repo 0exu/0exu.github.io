@@ -14,6 +14,8 @@
 **See you soon, stay up to date with your job...**
 ---
 
+30 cyber security roles added with a comprehensive checklist for guide.
+
 ```python
 exit()
 ```
