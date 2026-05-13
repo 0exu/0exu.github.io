@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>0warn - Practical Videos</title>
+  <link rel="stylesheet" href="../home.css">
+  <link rel="icon" sizes="70x70" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/OMSWASTRA_WITHOUT_BACKGORUND_2.png/250px-OMSWASTRA_WITHOUT_BACKGORUND_2.png" type="image/png">
+  <link rel="apple-touch-icon" sizes="70x70" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/OMSWASTRA_WITHOUT_BACKGORUND_2.png/250px-OMSWASTRA_WITHOUT_BACKGORUND_2.png"> 
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="./pvideo.css">
+</head>
+<body class="pvideo-body">
+ 
+  <div class="content">
+    <header>
+      <h1 class="logo-text">
+        <a href="../"><span>0</span><span>warn</span></a>
+      </h1>
+      <nav id="nav-menu">
+        <a href="../index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="../projects/projects.html"><i class="fas fa-code"></i> Projects</a>
+        <a href="../news/news.html"><i class="fas fa-newspaper"></i> News</a>
+        <a href="../pvideo/pvideo.html" class="active"><i class="fas fa-video"></i> Vlog</a>
+        <a href="../funthing/funthing.html"><i class="fas fa-gamepad"></i> Fun</a>
+      </nav>
+      <div style="display: flex; gap: 15px; align-items: center;">
+          <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
+          <a href="../clock/clock.html" class="nav-clock-btn">
+              <i class="fas fa-clock"></i>
+              <span id="clock">00:00:00</span>
+          </a>
+      </div>
+    </header>
+
+    <div class="youtube-layout">
+
+        <aside class="youtube-sidebar">
+            <h3 class="sidebar-title">PRESENT VIDEOS</h3>
+            <ul id="sidebar-video-list">
+                <!-- Video links will be loaded here by JavaScript -->
+            </ul>
+        </aside>
+        <main id="youtube-main-content" class="scroll-reveal">
+            <h2 class="section-title"> PRACTICAL VIEW </h2>
+            <div id="youtube-videos-container" class="youtube-videos-container">
+                <!-- YouTube videos will be loaded here by JavaScript -->
+            </div>
+            <div class="youtube-pagination-controls">
+                <button id="prev-video-button" aria-label="Previous Video"><i class="fas fa-chevron-left"></i></button>
+                <span id="video-page-info"></span>
+                <button id="next-video-button" aria-label="Next Video"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+      &copy; 2026 0warn | SECURING THE FUTURE
+    </footer>
+  </div>
+  
+  <script src="../script.js"></script>
+  <script src="./pvideo.js"></script>
+  <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="omswastra" data-description="Support me on Buy me a coffee!" data-message="Great to see you here !!" data-color="#FF5F5F" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+</body>
+</html>
