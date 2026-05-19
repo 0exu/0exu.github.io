@@ -18,5 +18,130 @@
     ],
     "name": "Greeting",
     "type": "folder"
+  },
+  {
+    "children": [
+      {
+        "date": "2026-05-19",
+        "filename": "hypertext-protocol.md",
+        "status": "published",
+        "title": "HyperText Protocol",
+        "type": "file"
+      },
+      {
+        "date": "2026-05-19",
+        "filename": "url-explained.md",
+        "status": "published",
+        "title": "URL Explained",
+        "type": "file"
+      },
+      {
+        "date": "2026-05-19",
+        "filename": "http-flow.md",
+        "status": "published",
+        "title": "HTTP Flow",
+        "type": "file"
+      },
+      {
+        "date": "2026-05-19",
+        "filename": "curl.md",
+        "status": "published",
+        "title": "cURL",
+        "type": "file"
+      },
+      {
+        "date": "2026-05-19",
+        "filename": "https-explained.md",
+        "status": "published",
+        "title": "HTTPS explained",
+        "type": "file"
+      },
+      {
+        "date": "2026-05-19",
+        "filename": "https-overview.md",
+        "status": "published",
+        "title": "HTTPS Overview",
+        "type": "file"
+      },
+      {
+        "type": "file",
+        "title": "HTTPS FLow",
+        "filename": "https-flow.md",
+        "date": "2026-05-19",
+        "status": "published"
+      },
+      {
+        "type": "file",
+        "title": "cURL for HTTPS",
+        "filename": "curl-for-https.md",
+        "date": "2026-05-19",
+        "status": "published"
+      },
+      {
+        "type": "file",
+        "title": "HTTP Req & Res",
+        "filename": "http-req---res.md",
+        "date": "2026-05-19",
+        "status": "published"
+      },
+      {
+        "type": "file",
+        "title": "HTTP Request",
+        "filename": "http-request.md",
+        "date": "2026-05-19",
+        "status": "published"
+      },
+      {
+        "type": "file",
+        "title": "HTTP Response",
+        "filename": "http-response.md",
+        "date": "2026-05-19",
+        "status": "published"
+      },
+      {
+        "type": "file",
+        "title": "cURL Again",
+        "filename": "curl-again.md",
+        "date": "2026-05-19",
+        "status": "published"
+      },
+      {
+        "type": "file",
+        "title": "Browser DevTool",
+        "filename": "browser-devtool.md",
+        "date": "2026-05-19",
+        "status": "published"
+      },
+      {
+        "type": "file",
+        "title": "HTTP Headers",
+        "filename": "http-headers.md",
+        "date": "2026-05-19",
+        "status": "published"
+      },
+      {
+        "type": "file",
+        "title": "All Headers Type",
+        "filename": "all-headers-type.md",
+        "date": "2026-05-19",
+        "status": "published"
+      },
+      {
+        "type": "file",
+        "title": "cURL & DevTool",
+        "filename": "curl---devtool.md",
+        "date": "2026-05-19",
+        "status": "published"
+      },
+      {
+        "type": "file",
+        "title": "HTTP Methods & codes",
+        "filename": "http-methods---codes.md",
+        "date": "2026-05-19",
+        "status": "published"
+      }
+    ],
+    "name": "Web Requests",
+    "type": "folder"
   }
 ]
