@@ -141,14 +141,69 @@
         "type": "file"
       },
       {
-        "type": "file",
-        "title": "GET Requests",
-        "filename": "get-requests.md",
         "date": "2026-05-21",
-        "status": "published"
+        "filename": "get-requests.md",
+        "status": "published",
+        "title": "GET Requests",
+        "type": "file"
       }
     ],
     "name": "Web Requests",
     "type": "folder"
+  },
+  {
+    "type": "folder",
+    "name": "Linux Learning",
+    "children": [
+      {
+        "type": "file",
+        "title": "Linux Structure",
+        "filename": "linux-structure.md",
+        "date": "2026-06-15",
+        "status": "published"
+      },
+      {
+        "type": "file",
+        "title": "Linux Distributions",
+        "filename": "linux-distributions.md",
+        "date": "2026-06-15",
+        "status": "published"
+      },
+      {
+        "type": "file",
+        "title": "Introduction to Shell",
+        "filename": "introduction-to-shell.md",
+        "date": "2026-06-15",
+        "status": "published"
+      },
+      {
+        "type": "file",
+        "title": "Prompt Description",
+        "filename": "prompt-description.md",
+        "date": "2026-06-15",
+        "status": "published"
+      },
+      {
+        "type": "file",
+        "title": "Getting Help",
+        "filename": "getting-help.md",
+        "date": "2026-06-15",
+        "status": "published"
+      },
+      {
+        "type": "file",
+        "title": "System Information",
+        "filename": "system-information.md",
+        "date": "2026-06-15",
+        "status": "published"
+      },
+      {
+        "type": "file",
+        "title": "Navigation",
+        "filename": "navigation.md",
+        "date": "2026-06-15",
+        "status": "published"
+      }
+    ]
   }
 ]
