@@ -154,9 +154,16 @@ const tools = [
     category: "lua",
     gitlab: true,
   },
+  {
+    name: "nvim-git",
+    img: "../back/nvim.png",
+    desc: "My personalized, highly-optimized Neovim configuration for maximum productivity (only packagemanager things).",
+    category: "lua",
+    gitlab: true,
+  },
 ];
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
   const grid = document.getElementById("tools-grid");
   const search = document.getElementById("project-search");
   const gitlabBtn = document.getElementById("gitlab-filter");
@@ -251,7 +258,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // GLOBAL UTILS
-window.copyClone = function (repoName, btn, isGitLab) {
+window.copyClone = function(repoName, btn, isGitLab) {
   const baseUrl = isGitLab ? "gitlab.com/0warn" : "github.com/0warn";
   const cmd = `git clone https://${baseUrl}/${repoName}.git`;
   navigator.clipboard.writeText(cmd).then(() => {
