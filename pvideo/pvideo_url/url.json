@@ -49,9 +49,15 @@
         "type": "file"
       },
       {
-        "type": "file",
         "id": "BGcJbnmlcyQ",
+        "platform": "youtube",
         "title": "Linux talk again",
+        "type": "file"
+      },
+      {
+        "type": "file",
+        "id": "f8bkcI0jAcA",
+        "title": "Installation Kali linux",
         "platform": "youtube"
       }
     ],
