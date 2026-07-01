@@ -55,9 +55,15 @@
         "type": "file"
       },
       {
-        "type": "file",
         "id": "f8bkcI0jAcA",
+        "platform": "youtube",
         "title": "Installation Kali linux",
+        "type": "file"
+      },
+      {
+        "type": "file",
+        "id": "mXX-YZ9Gwts",
+        "title": "Exploring xfce4",
         "platform": "youtube"
       }
     ],
